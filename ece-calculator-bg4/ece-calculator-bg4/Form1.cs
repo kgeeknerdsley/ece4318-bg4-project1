@@ -22,5 +22,11 @@ namespace ece_calculator_bg4
 			FilterCalculator filterCalc = new FilterCalculator(); //all forms are classes, make a new instance
 			filterCalc.Show();//show the new form
 		}
+
+		private void filterCalcStart_Click(object sender, EventArgs e)
+		{
+			FilterCalculator filterCalc = new FilterCalculator(); //all forms are classes, make a new instance
+			filterCalc.Show();//show the new form
+		}
 	}
 }
