@@ -36,5 +36,61 @@ namespace ece_calculator_bg4
         {
 
         }
+
+        private void VoltageDivider_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void voltD_page2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenerateRval_Click(object sender, EventArgs e)
+        {
+            decimal SR12, BR1, BR2, SR1, SR2; 
+
+            decimal V1 = decimal.Parse(Vin.Text);
+            decimal V2 = decimal.Parse(Vout.Text);
+            // Both R values the same
+            SR12 = V2 / (V1 * 2);
+            ValOut1.Text = SR12.ToString();
+
+
+
+
+
+        }
+
+        private void Vin_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void ValOut_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
