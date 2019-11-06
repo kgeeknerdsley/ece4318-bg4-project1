@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ece_calculator_bg4
 {
 	public partial class VoltageDivider : Form
@@ -91,6 +92,54 @@ namespace ece_calculator_bg4
         private void label4_Click(object sender, EventArgs e)
         {
 
+        }
+
+
+        private void button_calcVout_Click_1(object sender, EventArgs e)
+        {
+            bool isEmpty = checkforEmptyInputs();
+            if (!isEmpty)
+            {
+                bool vinValid, r1Valid, r2Valid;
+                vinValid = Decimal.TryParse(textbox_vin.Text, out decimal vinEntry);
+                r1Valid = UInt16.TryParse(R1_textbox.Text, out ushort r1);
+                r2Valid = UInt16.TryParse(R2_textbox.Text, out ushort r2);
+
+                if (vinValid && r1Valid && r2Valid)
+                {
+                
+                    //if valid calculate Vout
+                    decimal vout = (vinEntry * ((decimal)r2 / (r2 + r1)));
+                    textBox_vout.Text = vout.ToString();
+                }
+
+                else MessageBox.Show("Please enter numbers only", "You fucked up",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else return;
+        }
+
+        private bool checkforEmptyInputs()
+        {
+            int vin, r1, r2;
+            vin = textbox_vin.TextLength;
+            r1 = R1_textbox.TextLength;
+            r2 = R2_textbox.TextLength;
+
+            if ((vin + r1 + r2) < 3)
+            {
+                MessageBox.Show("Please enter information for all inputs.");
+                return true;
+            }
+            else return false;
+        }
+
+        private void button_clear_Click(object sender, EventArgs e)
+        {
+            textbox_vin.Clear();
+            R1_textbox.Clear();
+            R2_textbox.Clear();
+            textbox_vin.Focus();
         }
     }
 }
