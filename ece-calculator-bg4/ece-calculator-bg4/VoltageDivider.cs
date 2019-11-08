@@ -41,6 +41,7 @@ namespace ece_calculator_bg4
         {
             label_rload.Visible = checkBox_load.Checked;
             textBox_rload.Visible = checkBox_load.Checked;
+            label_voutWarning.Visible = false;
         }
 
         private void voltD_page2_Click(object sender, EventArgs e)
@@ -131,13 +132,20 @@ namespace ece_calculator_bg4
                     if (accountLoad)
                     {
                         voutwLoad = calculateVoutLoad(vinEntry, r1, r2, rL);
-                        if (Math.Abs(voutNormal - voutwLoad) > (.10m * (voutNormal)))
+                        if (Math.Abs(voutNormal - voutwLoad) > (Math.Abs(.10m * (voutNormal))))
                         {
-
+                            label_voutWarning.Visible = true;
+                            textBox_vout.Text = voutwLoad.ToString("F2");
+                            decimal req = ((r2 * rL) / (r2 + rL));
+                            calculatePower(vinEntry, (req+ r1));
                         }
+
                     }
-                    textBox_vout.Text = voutNormal.ToString("F2");
-                    calculatePower(vinEntry, (r2 + r1));
+                    else
+                    {
+                        textBox_vout.Text = voutNormal.ToString("F2");
+                        calculatePower(vinEntry, (r2 + r1));
+                    }
                 }
 
                 else MessageBox.Show("Please enter positive or negative numbers only.", "You fucked up",

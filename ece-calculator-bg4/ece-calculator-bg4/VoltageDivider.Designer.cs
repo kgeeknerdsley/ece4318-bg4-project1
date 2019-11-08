@@ -39,6 +39,8 @@
             this.button_clear = new System.Windows.Forms.Button();
             this.button_calcVout = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox_rload = new System.Windows.Forms.TextBox();
+            this.label_rload = new System.Windows.Forms.Label();
             this.checkBox_load = new System.Windows.Forms.CheckBox();
             this.textbox_vin = new System.Windows.Forms.TextBox();
             this.label_inputVolt = new System.Windows.Forms.Label();
@@ -58,8 +60,7 @@
             this.Vout = new System.Windows.Forms.TextBox();
             this.Temp = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_rload = new System.Windows.Forms.TextBox();
-            this.label_rload = new System.Windows.Forms.Label();
+            this.label_voutWarning = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.voltDivider_picBox)).BeginInit();
             this.voltDivider_menu.SuspendLayout();
             this.voltD_page1.SuspendLayout();
@@ -92,6 +93,7 @@
             // 
             // voltD_page1
             // 
+            this.voltD_page1.Controls.Add(this.label_voutWarning);
             this.voltD_page1.Controls.Add(this.groupBox_outputs);
             this.voltD_page1.Controls.Add(this.button_clear);
             this.voltD_page1.Controls.Add(this.button_calcVout);
@@ -189,6 +191,23 @@
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Inputs";
+            // 
+            // textBox_rload
+            // 
+            this.textBox_rload.Location = new System.Drawing.Point(150, 315);
+            this.textBox_rload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_rload.Name = "textBox_rload";
+            this.textBox_rload.Size = new System.Drawing.Size(161, 38);
+            this.textBox_rload.TabIndex = 38;
+            // 
+            // label_rload
+            // 
+            this.label_rload.AutoSize = true;
+            this.label_rload.Location = new System.Drawing.Point(44, 318);
+            this.label_rload.Name = "label_rload";
+            this.label_rload.Size = new System.Drawing.Size(98, 32);
+            this.label_rload.TabIndex = 39;
+            this.label_rload.Text = "Rload:";
             // 
             // checkBox_load
             // 
@@ -386,22 +405,15 @@
             this.label2.Text = "If you want both R1 and R2 to be the same. \r\nR1 and R2:\r\n\r\n\r\n";
             this.label2.Click += new System.EventHandler(this.label2_Click_2);
             // 
-            // textBox_rload
+            // label_voutWarning
             // 
-            this.textBox_rload.Location = new System.Drawing.Point(150, 315);
-            this.textBox_rload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox_rload.Name = "textBox_rload";
-            this.textBox_rload.Size = new System.Drawing.Size(161, 38);
-            this.textBox_rload.TabIndex = 38;
-            // 
-            // label_rload
-            // 
-            this.label_rload.AutoSize = true;
-            this.label_rload.Location = new System.Drawing.Point(44, 318);
-            this.label_rload.Name = "label_rload";
-            this.label_rload.Size = new System.Drawing.Size(98, 32);
-            this.label_rload.TabIndex = 39;
-            this.label_rload.Text = "Rload:";
+            this.label_voutWarning.AutoSize = true;
+            this.label_voutWarning.ForeColor = System.Drawing.Color.Red;
+            this.label_voutWarning.Location = new System.Drawing.Point(552, 500);
+            this.label_voutWarning.Name = "label_voutWarning";
+            this.label_voutWarning.Size = new System.Drawing.Size(548, 64);
+            this.label_voutWarning.TabIndex = 39;
+            this.label_voutWarning.Text = "Vout skewed due to large load resistance. \r\nConsider increasing load resistance.";
             // 
             // VoltageDivider
             // 
@@ -418,6 +430,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.voltDivider_picBox)).EndInit();
             this.voltDivider_menu.ResumeLayout(false);
             this.voltD_page1.ResumeLayout(false);
+            this.voltD_page1.PerformLayout();
             this.groupBox_outputs.ResumeLayout(false);
             this.groupBox_outputs.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -462,5 +475,6 @@
         private System.Windows.Forms.CheckBox checkBox_load;
         private System.Windows.Forms.TextBox textBox_rload;
         private System.Windows.Forms.Label label_rload;
+        private System.Windows.Forms.Label label_voutWarning;
     }
 }
