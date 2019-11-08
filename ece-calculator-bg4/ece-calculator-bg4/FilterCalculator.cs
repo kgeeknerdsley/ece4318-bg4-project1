@@ -16,5 +16,10 @@ namespace ece_calculator_bg4
 		{
 			InitializeComponent();
 		}
+
+		private void selectFilterType_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			MessageBox.Show("Change happened");
+		}
 	}
 }
