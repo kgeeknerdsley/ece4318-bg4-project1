@@ -40,8 +40,7 @@ namespace ece_calculator_bg4
 
         private void VoltageDivider_Load(object sender, EventArgs e)
         {
-            label_rload.Visible = checkBox_load.Checked;
-            textBox_rload.Visible = checkBox_load.Checked;
+
         }
 
         private void voltD_page2_Click(object sender, EventArgs e)
@@ -98,49 +97,23 @@ namespace ece_calculator_bg4
 
         private void button_calcVout_Click_1(object sender, EventArgs e)
         {
-            
             bool isEmpty = checkforEmptyInputs();
             if (!isEmpty)
             {
-                bool accountLoad = checkBox_load.Checked;
-                bool vinValid, r1Valid, r2Valid, rlValid;
-                decimal rL = 0;
-
-                
+                bool vinValid, r1Valid, r2Valid;
                 vinValid = Decimal.TryParse(textbox_vin.Text, out decimal vinEntry);
-                r1Valid = Decimal.TryParse(R1_textbox.Text, out decimal r1);
-                r2Valid = Decimal.TryParse(R2_textbox.Text, out decimal r2);
-                bool inputCheck = vinValid && r1Valid && r2Valid;
+                r1Valid = UInt16.TryParse(R1_textbox.Text, out ushort r1);
+                r2Valid = UInt16.TryParse(R2_textbox.Text, out ushort r2);
 
-                if (accountLoad)
+                if (vinValid && r1Valid && r2Valid)
                 {
-                    rlValid = Decimal.TryParse(textBox_rload.Text, out rL);
-                    inputCheck = vinValid && r1Valid && r2Valid && rlValid;
+                
+                    //if valid calculate Vout
+                    decimal vout = (vinEntry * ((decimal)r2 / (r2 + r1)));
+                    textBox_vout.Text = vout.ToString();
                 }
 
-                if (inputCheck)
-                {
-                    if (r1 < 0 || r2 < 0 || rL < 0)
-                    {
-                        MessageBox.Show("Enter positive resistor values only.");
-                        return;
-                    }
-
-                    decimal voutNormal = (vinEntry * (r2 / (r2 + r1)));
-                    decimal voutwLoad = 0;
-                    if (accountLoad)
-                    {
-                        voutwLoad = calculateVoutLoad(vinEntry, r1, r2, rL);
-                        if (Math.Abs(voutNormal - voutwLoad) > (.10m * (voutNormal)))
-                        {
-
-                        }
-                    }
-                    textBox_vout.Text = voutNormal.ToString("F2");
-                    calculatePower(vinEntry, (r2 + r1));
-                }
-
-                else MessageBox.Show("Please enter positive or negative numbers only.", "You fucked up",
+                else MessageBox.Show("Please enter numbers only", "You fucked up",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else return;
@@ -148,23 +121,12 @@ namespace ece_calculator_bg4
 
         private bool checkforEmptyInputs()
         {
-            int vin, r1, r2, rLoad, minLength, sum;
-            minLength = 3;
-
+            int vin, r1, r2;
             vin = textbox_vin.TextLength;
             r1 = R1_textbox.TextLength;
             r2 = R2_textbox.TextLength;
 
-            sum = vin + r1 + r2;
-
-            if (checkBox_load.Checked)
-            {
-                rLoad = textBox_rload.TextLength;
-                minLength = 4;
-                sum = vin + r1 + r2 + rLoad;
-            }
-
-            if (sum < minLength)
+            if ((vin + r1 + r2) < 3)
             {
                 MessageBox.Show("Please enter information for all inputs.");
                 return true;
@@ -172,58 +134,12 @@ namespace ece_calculator_bg4
             else return false;
         }
 
-        private decimal calculateVoutLoad(decimal vin, decimal r1, decimal r2, decimal rL)
-        {
-            decimal req = (r2 * rL) / (r2 + rL);
-            return (vin * (req / (req + r1)));
-        }
         private void button_clear_Click(object sender, EventArgs e)
         {
             textbox_vin.Clear();
             R1_textbox.Clear();
             R2_textbox.Clear();
             textbox_vin.Focus();
-        }
-
-        //not using this function, here in case
-        private void checkforNegative(bool [] negFlags)
-        {
-            String r1Text, r2Text;
-            r1Text = R1_textbox.Text;
-            r2Text = R2_textbox.Text;
-            if (r1Text[0].Equals('-')) negFlags[0] = true;
-            if (r2Text[0].Equals('-')) negFlags[1] = true;
-        }
-
-        private void calculatePower(decimal vin, decimal req)
-        {
-            decimal current = vin / req;
-            decimal powerMW = (vin * current)*1000;
-            richTextBox_pwr.Text = powerMW.ToString("F2");
-        }
-
-        private void textbox_vin_TextChanged(object sender, EventArgs e)
-        {
-            richTextBox_pwr.Clear();
-            textBox_vout.Clear();
-        }
-
-        private void R1_textbox_TextChanged(object sender, EventArgs e)
-        {
-            richTextBox_pwr.Clear();
-            textBox_vout.Clear();
-        }
-
-        private void R2_textbox_TextChanged(object sender, EventArgs e)
-        {
-            richTextBox_pwr.Clear();
-            textBox_vout.Clear();
-        }
-
-        private void checkBox_load_CheckedChanged(object sender, EventArgs e)
-        {
-            label_rload.Visible = checkBox_load.Checked;
-            textBox_rload.Visible = checkBox_load.Checked;
         }
     }
 }
