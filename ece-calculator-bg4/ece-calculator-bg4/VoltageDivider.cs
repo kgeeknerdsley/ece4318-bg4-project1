@@ -60,7 +60,6 @@ namespace ece_calculator_bg4
         private void GenerateRval_Click(object sender, EventArgs e)
         {
             decimal SR12, BR1, BR2, SR1, SR2; 
-            //test 
 
             decimal V1 = decimal.Parse(Vin.Text);
             decimal V2 = decimal.Parse(Vout.Text);
@@ -90,11 +89,6 @@ namespace ece_calculator_bg4
         }
 
         private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Vout_TextChanged(object sender, EventArgs e)
         {
 
         }
