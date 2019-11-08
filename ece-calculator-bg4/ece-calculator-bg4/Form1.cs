@@ -17,34 +17,79 @@ namespace ece_calculator_bg4
 			InitializeComponent();
 		}
 
+		//Initialize all forms, but set them to null
+		//This lets us see if they've actually been created or are just empty pointers
+		//Then we can ensure we're only generating the form once
+		FilterCalculator filterCalc = null;
+		ResistorColor resistorCalc = null;
+		TruthTables truthTable = null;
+		CommonChipPins comChipPin = null;
+		VoltageDivider voltDiv = null;
+
 		private void filterCalcStart_Click(object sender, EventArgs e)
 		{
-			FilterCalculator filterCalc = new FilterCalculator(); //all forms are classes, make a new instance
-			filterCalc.Show();//show the new form
+			if(filterCalc == null)
+			{
+				filterCalc = new FilterCalculator();  //all forms are classes, make a new instance
+				filterCalc.Show();//show the new form
+			} else
+			{
+				filterCalc.BringToFront();
+			}	
 		}
 
 		private void resistorCalcStart_Click(object sender, EventArgs e)
 		{
-			ResistorColor resistorCalc = new ResistorColor();
-			resistorCalc.Show();
+			if(resistorCalc == null)
+			{
+				resistorCalc = new ResistorColor();
+				resistorCalc.Show();
+			} else
+			{
+				resistorCalc.BringToFront();
+			}
+
+			
 		}
 
 		private void voltageDivStart_Click(object sender, EventArgs e)
 		{
-			VoltageDivider voltDiv = new VoltageDivider();
-			voltDiv.Show();
+			if(voltDiv == null)
+			{
+				voltDiv = new VoltageDivider();
+				voltDiv.Show();
+			} else
+			{
+				voltDiv.BringToFront();
+			}
+
 		}
 
 		private void commonChipStart_Click(object sender, EventArgs e)
 		{
-			CommonChipPins comChipPin = new CommonChipPins();
-			comChipPin.Show();
+			if(comChipPin == null)
+			{
+				comChipPin = new CommonChipPins();
+				comChipPin.Show();
+			} else
+			{
+				comChipPin.BringToFront();
+			}
+			
 		}
 
 		private void truthTableStart_Click(object sender, EventArgs e)
 		{
-			TruthTables truthTable = new TruthTables();
-			truthTable.Show();
+			if(truthTable == null)
+			{
+				truthTable = new TruthTables();
+				truthTable.Show();
+			} else
+			{
+				truthTable.BringToFront();
+			}
+
+			
 		}
 
 		private void aboutMenuItem_Click(object sender, EventArgs e)
