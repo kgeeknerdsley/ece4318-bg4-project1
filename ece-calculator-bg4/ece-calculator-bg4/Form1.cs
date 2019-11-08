@@ -28,7 +28,7 @@ namespace ece_calculator_bg4
 
 		private void filterCalcStart_Click(object sender, EventArgs e)
 		{
-			if(filterCalc == null)
+			if(!isFormOpen("FilterCalculator"))
 			{
 				filterCalc = new FilterCalculator();  //all forms are classes, make a new instance
 				filterCalc.Show();//show the new form
@@ -40,7 +40,7 @@ namespace ece_calculator_bg4
 
 		private void resistorCalcStart_Click(object sender, EventArgs e)
 		{
-			if(resistorCalc == null)
+			if(!isFormOpen("ResistorColor"))
 			{
 				resistorCalc = new ResistorColor();
 				resistorCalc.Show();
@@ -54,7 +54,7 @@ namespace ece_calculator_bg4
 
 		private void voltageDivStart_Click(object sender, EventArgs e)
 		{
-			if(voltDiv == null)
+			if(!isFormOpen("VoltageDivider"))
 			{
 				voltDiv = new VoltageDivider();
 				voltDiv.Show();
@@ -67,7 +67,7 @@ namespace ece_calculator_bg4
 
 		private void commonChipStart_Click(object sender, EventArgs e)
 		{
-			if(comChipPin == null)
+			if(!isFormOpen("CommonChipPins"))
 			{
 				comChipPin = new CommonChipPins();
 				comChipPin.Show();
@@ -80,7 +80,7 @@ namespace ece_calculator_bg4
 
 		private void truthTableStart_Click(object sender, EventArgs e)
 		{
-			if(truthTable == null)
+			if(!isFormOpen("TruthTables"))
 			{
 				truthTable = new TruthTables();
 				truthTable.Show();
@@ -101,6 +101,20 @@ namespace ece_calculator_bg4
 				"Resistor Color Code: Josiah DeLeon, Keane Ong\n" +
 				"Common Chip Pinouts: Grant Genie, Eun Koo\n" +
 				"Truth Tables: Steven Baker, Daniel Heer");
+		}
+
+		private bool isFormOpen(string formName)
+		{
+			bool result = false;
+
+			foreach(var item in Application.OpenForms) //iterate through the collection of open forms
+			{
+				if(item.GetType().Name == formName)
+				{
+					result = true; //if we find a form with the type we want, return true
+				}
+			}
+			return result; //otherwise return false
 		}
 	}
 }
