@@ -51,5 +51,10 @@ namespace ece_calculator_bg4
 
 
 		}
+
+		private void startFilterCalc_Click(object sender, EventArgs e)
+		{
+
+		}
 	}
 }
