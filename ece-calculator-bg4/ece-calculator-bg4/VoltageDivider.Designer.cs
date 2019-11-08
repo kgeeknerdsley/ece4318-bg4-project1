@@ -36,17 +36,17 @@
             this.R2_textbox = new System.Windows.Forms.TextBox();
             this.R2_label = new System.Windows.Forms.Label();
             this.voltD_page2 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ValOut3 = new System.Windows.Forms.TextBox();
+            this.ValOut2 = new System.Windows.Forms.TextBox();
             this.ValOut1 = new System.Windows.Forms.TextBox();
             this.GenerateRval = new System.Windows.Forms.Button();
             this.Vin = new System.Windows.Forms.TextBox();
             this.Temp2 = new System.Windows.Forms.Label();
             this.Vout = new System.Windows.Forms.TextBox();
             this.Temp = new System.Windows.Forms.Label();
-            this.ValOut2 = new System.Windows.Forms.TextBox();
-            this.ValOut3 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.voltDivider_picBox)).BeginInit();
             this.voltDivider_menu.SuspendLayout();
             this.voltD_page1.SuspendLayout();
@@ -149,6 +149,41 @@
             this.voltD_page2.UseVisualStyleBackColor = true;
             this.voltD_page2.Click += new System.EventHandler(this.voltD_page2_Click);
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 250);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 32;
+            this.label4.Text = "R2 > R1";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(18, 205);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(47, 13);
+            this.label3.TabIndex = 31;
+            this.label3.Text = "R1 > R2";
+            // 
+            // ValOut3
+            // 
+            this.ValOut3.Location = new System.Drawing.Point(21, 266);
+            this.ValOut3.Multiline = true;
+            this.ValOut3.Name = "ValOut3";
+            this.ValOut3.Size = new System.Drawing.Size(383, 22);
+            this.ValOut3.TabIndex = 28;
+            // 
+            // ValOut2
+            // 
+            this.ValOut2.Location = new System.Drawing.Point(21, 221);
+            this.ValOut2.Multiline = true;
+            this.ValOut2.Name = "ValOut2";
+            this.ValOut2.Size = new System.Drawing.Size(383, 22);
+            this.ValOut2.TabIndex = 27;
+            // 
             // ValOut1
             // 
             this.ValOut1.Location = new System.Drawing.Point(21, 180);
@@ -195,6 +230,7 @@
             this.Vout.Name = "Vout";
             this.Vout.Size = new System.Drawing.Size(63, 20);
             this.Vout.TabIndex = 23;
+            this.Vout.TextChanged += new System.EventHandler(this.Vout_TextChanged);
             // 
             // Temp
             // 
@@ -207,22 +243,6 @@
             this.Temp.Text = "Vin:";
             this.Temp.Click += new System.EventHandler(this.label2_Click_1);
             // 
-            // ValOut2
-            // 
-            this.ValOut2.Location = new System.Drawing.Point(21, 221);
-            this.ValOut2.Multiline = true;
-            this.ValOut2.Name = "ValOut2";
-            this.ValOut2.Size = new System.Drawing.Size(383, 22);
-            this.ValOut2.TabIndex = 27;
-            // 
-            // ValOut3
-            // 
-            this.ValOut3.Location = new System.Drawing.Point(21, 266);
-            this.ValOut3.Multiline = true;
-            this.ValOut3.Name = "ValOut3";
-            this.ValOut3.Size = new System.Drawing.Size(383, 22);
-            this.ValOut3.TabIndex = 28;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -233,30 +253,11 @@
             this.label2.Text = "If you want both R1 and R2 to be the same. \r\nR1 and R2:\r\n\r\n\r\n";
             this.label2.Click += new System.EventHandler(this.label2_Click_2);
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 205);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(47, 13);
-            this.label3.TabIndex = 31;
-            this.label3.Text = "R1 > R2";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(18, 250);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 13);
-            this.label4.TabIndex = 32;
-            this.label4.Text = "R2 > R1";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
             // VoltageDivider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 496);
+            this.ClientSize = new System.Drawing.Size(1160, 699);
             this.Controls.Add(this.voltDivider_menu);
             this.Controls.Add(this.voltDivider_picBox);
             this.Margin = new System.Windows.Forms.Padding(1);
