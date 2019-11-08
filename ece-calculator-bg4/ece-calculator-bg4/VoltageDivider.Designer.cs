@@ -31,6 +31,21 @@
             this.voltDivider_picBox = new System.Windows.Forms.PictureBox();
             this.voltDivider_menu = new System.Windows.Forms.TabControl();
             this.voltD_page1 = new System.Windows.Forms.TabPage();
+            this.groupBox_outputs = new System.Windows.Forms.GroupBox();
+            this.richTextBox_pwr = new System.Windows.Forms.RichTextBox();
+            this.label_pwr = new System.Windows.Forms.Label();
+            this.textBox_vout = new System.Windows.Forms.RichTextBox();
+            this.label_vout = new System.Windows.Forms.Label();
+            this.button_clear = new System.Windows.Forms.Button();
+            this.button_calcVout = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBox_load = new System.Windows.Forms.CheckBox();
+            this.textbox_vin = new System.Windows.Forms.TextBox();
+            this.label_inputVolt = new System.Windows.Forms.Label();
+            this.R1_textbox = new System.Windows.Forms.TextBox();
+            this.R1_label = new System.Windows.Forms.Label();
+            this.R2_textbox = new System.Windows.Forms.TextBox();
+            this.R2_label = new System.Windows.Forms.Label();
             this.voltD_page2 = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -43,22 +58,14 @@
             this.Vout = new System.Windows.Forms.TextBox();
             this.Temp = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox_vout = new System.Windows.Forms.RichTextBox();
-            this.label_vout = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button_calcVout = new System.Windows.Forms.Button();
-            this.textbox_vin = new System.Windows.Forms.TextBox();
-            this.label_inputVolt = new System.Windows.Forms.Label();
-            this.R1_textbox = new System.Windows.Forms.TextBox();
-            this.R1_label = new System.Windows.Forms.Label();
-            this.R2_textbox = new System.Windows.Forms.TextBox();
-            this.R2_label = new System.Windows.Forms.Label();
-            this.button_clear = new System.Windows.Forms.Button();
+            this.textBox_rload = new System.Windows.Forms.TextBox();
+            this.label_rload = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.voltDivider_picBox)).BeginInit();
             this.voltDivider_menu.SuspendLayout();
             this.voltD_page1.SuspendLayout();
-            this.voltD_page2.SuspendLayout();
+            this.groupBox_outputs.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.voltD_page2.SuspendLayout();
             this.SuspendLayout();
             // 
             // voltDivider_picBox
@@ -85,11 +92,10 @@
             // 
             // voltD_page1
             // 
+            this.voltD_page1.Controls.Add(this.groupBox_outputs);
             this.voltD_page1.Controls.Add(this.button_clear);
             this.voltD_page1.Controls.Add(this.button_calcVout);
             this.voltD_page1.Controls.Add(this.groupBox1);
-            this.voltD_page1.Controls.Add(this.label_vout);
-            this.voltD_page1.Controls.Add(this.textBox_vout);
             this.voltD_page1.Location = new System.Drawing.Point(10, 48);
             this.voltD_page1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.voltD_page1.Name = "voltD_page1";
@@ -98,6 +104,156 @@
             this.voltD_page1.TabIndex = 0;
             this.voltD_page1.Text = "Generate Vout";
             this.voltD_page1.UseVisualStyleBackColor = true;
+            // 
+            // groupBox_outputs
+            // 
+            this.groupBox_outputs.Controls.Add(this.richTextBox_pwr);
+            this.groupBox_outputs.Controls.Add(this.label_pwr);
+            this.groupBox_outputs.Controls.Add(this.textBox_vout);
+            this.groupBox_outputs.Controls.Add(this.label_vout);
+            this.groupBox_outputs.Location = new System.Drawing.Point(618, 104);
+            this.groupBox_outputs.Name = "groupBox_outputs";
+            this.groupBox_outputs.Size = new System.Drawing.Size(446, 282);
+            this.groupBox_outputs.TabIndex = 38;
+            this.groupBox_outputs.TabStop = false;
+            this.groupBox_outputs.Text = "Outputs";
+            // 
+            // richTextBox_pwr
+            // 
+            this.richTextBox_pwr.Location = new System.Drawing.Point(29, 211);
+            this.richTextBox_pwr.Name = "richTextBox_pwr";
+            this.richTextBox_pwr.Size = new System.Drawing.Size(384, 38);
+            this.richTextBox_pwr.TabIndex = 29;
+            this.richTextBox_pwr.Text = "";
+            // 
+            // label_pwr
+            // 
+            this.label_pwr.AutoSize = true;
+            this.label_pwr.Location = new System.Drawing.Point(23, 164);
+            this.label_pwr.Name = "label_pwr";
+            this.label_pwr.Size = new System.Drawing.Size(325, 32);
+            this.label_pwr.TabIndex = 30;
+            this.label_pwr.Text = "Power Dissipation (mW):";
+            // 
+            // textBox_vout
+            // 
+            this.textBox_vout.Location = new System.Drawing.Point(29, 107);
+            this.textBox_vout.Name = "textBox_vout";
+            this.textBox_vout.Size = new System.Drawing.Size(384, 38);
+            this.textBox_vout.TabIndex = 27;
+            this.textBox_vout.Text = "";
+            // 
+            // label_vout
+            // 
+            this.label_vout.AutoSize = true;
+            this.label_vout.Location = new System.Drawing.Point(23, 60);
+            this.label_vout.Name = "label_vout";
+            this.label_vout.Size = new System.Drawing.Size(171, 32);
+            this.label_vout.TabIndex = 28;
+            this.label_vout.Text = "Vout (Volts):";
+            // 
+            // button_clear
+            // 
+            this.button_clear.Location = new System.Drawing.Point(309, 579);
+            this.button_clear.Name = "button_clear";
+            this.button_clear.Size = new System.Drawing.Size(210, 110);
+            this.button_clear.TabIndex = 37;
+            this.button_clear.Text = "Clear";
+            this.button_clear.UseVisualStyleBackColor = true;
+            this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
+            // 
+            // button_calcVout
+            // 
+            this.button_calcVout.Location = new System.Drawing.Point(73, 579);
+            this.button_calcVout.Name = "button_calcVout";
+            this.button_calcVout.Size = new System.Drawing.Size(230, 110);
+            this.button_calcVout.TabIndex = 36;
+            this.button_calcVout.Text = "Calculate";
+            this.button_calcVout.UseVisualStyleBackColor = true;
+            this.button_calcVout.Click += new System.EventHandler(this.button_calcVout_Click_1);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBox_rload);
+            this.groupBox1.Controls.Add(this.label_rload);
+            this.groupBox1.Controls.Add(this.checkBox_load);
+            this.groupBox1.Controls.Add(this.textbox_vin);
+            this.groupBox1.Controls.Add(this.label_inputVolt);
+            this.groupBox1.Controls.Add(this.R1_textbox);
+            this.groupBox1.Controls.Add(this.R1_label);
+            this.groupBox1.Controls.Add(this.R2_textbox);
+            this.groupBox1.Controls.Add(this.R2_label);
+            this.groupBox1.Location = new System.Drawing.Point(73, 104);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(446, 402);
+            this.groupBox1.TabIndex = 30;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Inputs";
+            // 
+            // checkBox_load
+            // 
+            this.checkBox_load.AutoSize = true;
+            this.checkBox_load.Location = new System.Drawing.Point(85, 259);
+            this.checkBox_load.Name = "checkBox_load";
+            this.checkBox_load.Size = new System.Drawing.Size(283, 36);
+            this.checkBox_load.TabIndex = 37;
+            this.checkBox_load.Text = "Account for Load?";
+            this.checkBox_load.UseVisualStyleBackColor = true;
+            this.checkBox_load.CheckedChanged += new System.EventHandler(this.checkBox_load_CheckedChanged);
+            // 
+            // textbox_vin
+            // 
+            this.textbox_vin.Location = new System.Drawing.Point(150, 75);
+            this.textbox_vin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textbox_vin.Name = "textbox_vin";
+            this.textbox_vin.Size = new System.Drawing.Size(161, 38);
+            this.textbox_vin.TabIndex = 34;
+            this.textbox_vin.TextChanged += new System.EventHandler(this.textbox_vin_TextChanged);
+            // 
+            // label_inputVolt
+            // 
+            this.label_inputVolt.AutoSize = true;
+            this.label_inputVolt.Location = new System.Drawing.Point(79, 75);
+            this.label_inputVolt.Name = "label_inputVolt";
+            this.label_inputVolt.Size = new System.Drawing.Size(65, 32);
+            this.label_inputVolt.TabIndex = 35;
+            this.label_inputVolt.Text = "Vin:";
+            // 
+            // R1_textbox
+            // 
+            this.R1_textbox.Location = new System.Drawing.Point(150, 131);
+            this.R1_textbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.R1_textbox.Name = "R1_textbox";
+            this.R1_textbox.Size = new System.Drawing.Size(161, 38);
+            this.R1_textbox.TabIndex = 30;
+            this.R1_textbox.TextChanged += new System.EventHandler(this.R1_textbox_TextChanged);
+            // 
+            // R1_label
+            // 
+            this.R1_label.AutoSize = true;
+            this.R1_label.Location = new System.Drawing.Point(83, 131);
+            this.R1_label.Name = "R1_label";
+            this.R1_label.Size = new System.Drawing.Size(59, 32);
+            this.R1_label.TabIndex = 31;
+            this.R1_label.Text = "R1:";
+            // 
+            // R2_textbox
+            // 
+            this.R2_textbox.Location = new System.Drawing.Point(150, 190);
+            this.R2_textbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.R2_textbox.Name = "R2_textbox";
+            this.R2_textbox.Size = new System.Drawing.Size(161, 38);
+            this.R2_textbox.TabIndex = 32;
+            this.R2_textbox.TextChanged += new System.EventHandler(this.R2_textbox_TextChanged);
+            // 
+            // R2_label
+            // 
+            this.R2_label.AutoSize = true;
+            this.R2_label.Location = new System.Drawing.Point(83, 190);
+            this.R2_label.Name = "R2_label";
+            this.R2_label.Size = new System.Drawing.Size(59, 32);
+            this.R2_label.TabIndex = 33;
+            this.R2_label.Text = "R2:";
             // 
             // voltD_page2
             // 
@@ -230,108 +386,22 @@
             this.label2.Text = "If you want both R1 and R2 to be the same. \r\nR1 and R2:\r\n\r\n\r\n";
             this.label2.Click += new System.EventHandler(this.label2_Click_2);
             // 
-            // textBox_vout
+            // textBox_rload
             // 
-            this.textBox_vout.Location = new System.Drawing.Point(621, 235);
-            this.textBox_vout.Name = "textBox_vout";
-            this.textBox_vout.Size = new System.Drawing.Size(384, 156);
-            this.textBox_vout.TabIndex = 27;
-            this.textBox_vout.Text = "";
+            this.textBox_rload.Location = new System.Drawing.Point(150, 315);
+            this.textBox_rload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_rload.Name = "textBox_rload";
+            this.textBox_rload.Size = new System.Drawing.Size(161, 38);
+            this.textBox_rload.TabIndex = 38;
             // 
-            // label_vout
+            // label_rload
             // 
-            this.label_vout.AutoSize = true;
-            this.label_vout.Location = new System.Drawing.Point(615, 188);
-            this.label_vout.Name = "label_vout";
-            this.label_vout.Size = new System.Drawing.Size(82, 32);
-            this.label_vout.TabIndex = 28;
-            this.label_vout.Text = "Vout:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textbox_vin);
-            this.groupBox1.Controls.Add(this.label_inputVolt);
-            this.groupBox1.Controls.Add(this.R1_textbox);
-            this.groupBox1.Controls.Add(this.R1_label);
-            this.groupBox1.Controls.Add(this.R2_textbox);
-            this.groupBox1.Controls.Add(this.R2_label);
-            this.groupBox1.Location = new System.Drawing.Point(73, 104);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(446, 282);
-            this.groupBox1.TabIndex = 30;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Inputs";
-            // 
-            // button_calcVout
-            // 
-            this.button_calcVout.Location = new System.Drawing.Point(73, 403);
-            this.button_calcVout.Name = "button_calcVout";
-            this.button_calcVout.Size = new System.Drawing.Size(230, 110);
-            this.button_calcVout.TabIndex = 36;
-            this.button_calcVout.Text = "Calculate";
-            this.button_calcVout.UseVisualStyleBackColor = true;
-            this.button_calcVout.Click += new System.EventHandler(this.button_calcVout_Click_1);
-            // 
-            // textbox_vin
-            // 
-            this.textbox_vin.Location = new System.Drawing.Point(150, 75);
-            this.textbox_vin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textbox_vin.Name = "textbox_vin";
-            this.textbox_vin.Size = new System.Drawing.Size(161, 38);
-            this.textbox_vin.TabIndex = 34;
-            // 
-            // label_inputVolt
-            // 
-            this.label_inputVolt.AutoSize = true;
-            this.label_inputVolt.Location = new System.Drawing.Point(79, 75);
-            this.label_inputVolt.Name = "label_inputVolt";
-            this.label_inputVolt.Size = new System.Drawing.Size(65, 32);
-            this.label_inputVolt.TabIndex = 35;
-            this.label_inputVolt.Text = "Vin:";
-            // 
-            // R1_textbox
-            // 
-            this.R1_textbox.Location = new System.Drawing.Point(150, 131);
-            this.R1_textbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.R1_textbox.Name = "R1_textbox";
-            this.R1_textbox.Size = new System.Drawing.Size(161, 38);
-            this.R1_textbox.TabIndex = 30;
-            // 
-            // R1_label
-            // 
-            this.R1_label.AutoSize = true;
-            this.R1_label.Location = new System.Drawing.Point(83, 131);
-            this.R1_label.Name = "R1_label";
-            this.R1_label.Size = new System.Drawing.Size(59, 32);
-            this.R1_label.TabIndex = 31;
-            this.R1_label.Text = "R1:";
-            // 
-            // R2_textbox
-            // 
-            this.R2_textbox.Location = new System.Drawing.Point(150, 190);
-            this.R2_textbox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.R2_textbox.Name = "R2_textbox";
-            this.R2_textbox.Size = new System.Drawing.Size(161, 38);
-            this.R2_textbox.TabIndex = 32;
-            // 
-            // R2_label
-            // 
-            this.R2_label.AutoSize = true;
-            this.R2_label.Location = new System.Drawing.Point(83, 190);
-            this.R2_label.Name = "R2_label";
-            this.R2_label.Size = new System.Drawing.Size(59, 32);
-            this.R2_label.TabIndex = 33;
-            this.R2_label.Text = "R2:";
-            // 
-            // button_clear
-            // 
-            this.button_clear.Location = new System.Drawing.Point(309, 403);
-            this.button_clear.Name = "button_clear";
-            this.button_clear.Size = new System.Drawing.Size(210, 110);
-            this.button_clear.TabIndex = 37;
-            this.button_clear.Text = "Clear";
-            this.button_clear.UseVisualStyleBackColor = true;
-            this.button_clear.Click += new System.EventHandler(this.button_clear_Click);
+            this.label_rload.AutoSize = true;
+            this.label_rload.Location = new System.Drawing.Point(44, 318);
+            this.label_rload.Name = "label_rload";
+            this.label_rload.Size = new System.Drawing.Size(98, 32);
+            this.label_rload.TabIndex = 39;
+            this.label_rload.Text = "Rload:";
             // 
             // VoltageDivider
             // 
@@ -348,11 +418,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.voltDivider_picBox)).EndInit();
             this.voltDivider_menu.ResumeLayout(false);
             this.voltD_page1.ResumeLayout(false);
-            this.voltD_page1.PerformLayout();
-            this.voltD_page2.ResumeLayout(false);
-            this.voltD_page2.PerformLayout();
+            this.groupBox_outputs.ResumeLayout(false);
+            this.groupBox_outputs.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.voltD_page2.ResumeLayout(false);
+            this.voltD_page2.PerformLayout();
             this.ResumeLayout(false);
 
 		}
@@ -385,5 +456,11 @@
         private System.Windows.Forms.Label R1_label;
         private System.Windows.Forms.TextBox R2_textbox;
         private System.Windows.Forms.Label R2_label;
+        private System.Windows.Forms.GroupBox groupBox_outputs;
+        private System.Windows.Forms.RichTextBox richTextBox_pwr;
+        private System.Windows.Forms.Label label_pwr;
+        private System.Windows.Forms.CheckBox checkBox_load;
+        private System.Windows.Forms.TextBox textBox_rload;
+        private System.Windows.Forms.Label label_rload;
     }
 }
