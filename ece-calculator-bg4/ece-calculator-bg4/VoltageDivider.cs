@@ -246,13 +246,28 @@ namespace ece_calculator_bg4
             bool emptycheck = EmptyInputs();
             if (!emptycheck)
             {
+                decimal R1v, R2v;
                 decimal.TryParse(Vin.Text, out decimal vin);
                 decimal.TryParse(Vout.Text, out decimal vout);
                 decimal.TryParse(MaxPower.Text, out decimal maxpower);
 
                 decimal Rratio = vout / vin;
                 // equation for volt divider is Vout = (r2/(r1+r2))*Vin
+                if (Rcheck.Checked)
+                {
+                    decimal.TryParse(R1.Text, out decimal r1);
 
+
+                }
+                else
+                {
+                    R1v = 1000;
+                    R2v = (R1v * Rratio) / (1 - Rratio);
+                    R1Val.Text = R1v.ToString();
+                    R2Val.Text = R2v.ToString();
+
+                    
+                }
 
             }
 
@@ -275,11 +290,11 @@ namespace ece_calculator_bg4
 
             if (Rcheck.Checked)
             {
-                mininputs = 3;
+                mininputs = 4;
             }
             else
             {
-                mininputs = 4;
+                mininputs = 3;
             }
             
             sum = vin + vout + r1 + maxpower;
@@ -290,6 +305,16 @@ namespace ece_calculator_bg4
                 return true;
             }
             else return false;
+
+        }
+
+        private void textBox_vout_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void R1Val_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
