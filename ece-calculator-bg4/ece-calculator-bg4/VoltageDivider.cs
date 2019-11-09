@@ -61,16 +61,7 @@ namespace ece_calculator_bg4
 
         private void GenerateRval_Click(object sender, EventArgs e)
         {
-            decimal SR12, BR1, BR2, SR1, SR2; 
-
-            decimal V1 = decimal.Parse(Vin.Text);
-            decimal V2 = decimal.Parse(Vout.Text);
-            // Both R values the same
-            SR12 = V2 / (V1 * 2);
-            ValOut1.Text = SR12.ToString();
-
-
-
+  
 
 
         }
@@ -232,6 +223,74 @@ namespace ece_calculator_bg4
         {
             label_rload.Visible = checkBox_load.Checked;
             textBox_rload.Visible = checkBox_load.Checked;
+        }
+
+        private void MaxPower_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void clear_butt_Click(object sender, EventArgs e)
+        {
+            R1.Clear();
+            Vin.Clear();
+            Vout.Clear();
+            MaxPower.Clear();
+            R1Val.Clear();
+            R2Val.Clear();
+
+        }
+
+        private void Generate_Click(object sender, EventArgs e)
+        {
+            bool emptycheck = EmptyInputs();
+            if (!emptycheck)
+            {
+                decimal.TryParse(Vin.Text, out decimal vin);
+                decimal.TryParse(Vout.Text, out decimal vout);
+                decimal.TryParse(MaxPower.Text, out decimal maxpower);
+
+                decimal Rratio = vout / vin;
+                // equation for volt divider is Vout = (r2/(r1+r2))*Vin
+
+
+            }
+
+            else return;
+
+
+
+
+        }
+
+        private bool EmptyInputs()
+        {
+            int vin, vout, r1, maxpower, sum, mininputs;
+
+
+            vin = Vin.TextLength;
+            vout = Vout.TextLength;
+            r1 = R1.TextLength;
+            maxpower = MaxPower.TextLength;
+
+            if (Rcheck.Checked)
+            {
+                mininputs = 3;
+            }
+            else
+            {
+                mininputs = 4;
+            }
+            
+            sum = vin + vout + r1 + maxpower;
+
+            if (sum < mininputs)
+            {
+                MessageBox.Show("Please enter all neecessary inputs. \nIf you do not have a R1 or R2 value, please enter 0.");
+                return true;
+            }
+            else return false;
+
         }
     }
 
