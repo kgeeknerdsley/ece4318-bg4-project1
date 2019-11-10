@@ -64,6 +64,7 @@
 			this.selectFilterType.Name = "selectFilterType";
 			this.selectFilterType.Size = new System.Drawing.Size(121, 21);
 			this.selectFilterType.TabIndex = 0;
+			this.selectFilterType.Text = "Low Pass";
 			this.selectFilterType.SelectedIndexChanged += new System.EventHandler(this.selectFilterType_SelectedIndexChanged);
 			// 
 			// dropdownInstruction
@@ -204,6 +205,7 @@
 			this.r1Units.Name = "r1Units";
 			this.r1Units.Size = new System.Drawing.Size(39, 21);
 			this.r1Units.TabIndex = 16;
+			this.r1Units.Text = "Ω";
 			// 
 			// r2Units
 			// 
@@ -216,6 +218,7 @@
 			this.r2Units.Name = "r2Units";
 			this.r2Units.Size = new System.Drawing.Size(39, 21);
 			this.r2Units.TabIndex = 17;
+			this.r2Units.Text = "Ω";
 			// 
 			// fcUnitLabel
 			// 
@@ -238,6 +241,7 @@
 			this.c1Units.Name = "c1Units";
 			this.c1Units.Size = new System.Drawing.Size(39, 21);
 			this.c1Units.TabIndex = 19;
+			this.c1Units.Text = "μF";
 			// 
 			// c2Units
 			// 
@@ -251,6 +255,7 @@
 			this.c2Units.Name = "c2Units";
 			this.c2Units.Size = new System.Drawing.Size(39, 21);
 			this.c2Units.TabIndex = 20;
+			this.c2Units.Text = "μF";
 			// 
 			// FilterCalculator
 			// 
