@@ -42,6 +42,10 @@ namespace ece_calculator_bg4
             label_rload.Visible = checkBox_load.Checked;
             textBox_rload.Visible = checkBox_load.Checked;
             label_voutWarning.Visible = false;
+
+            R1.Visible = Rcheck.Checked;
+            label_r1manualEntry.Visible = Rcheck.Checked;
+
         }
 
         private void voltD_page2_Click(object sender, EventArgs e)
@@ -123,17 +127,25 @@ namespace ece_calculator_bg4
                     if (accountLoad)
                     {
                         voutwLoad = calculateVoutLoad(vinEntry, r1, r2, rL);
-                        if (Math.Abs(voutNormal - voutwLoad) > (Math.Abs(.10m * (voutNormal))))
+                        if (Math.Abs(voutwLoad/voutNormal) < 0.90m)
                         {
-                            label_voutWarning.Visible = true;
-                            textBox_vout.Text = voutwLoad.ToString("F2");
-                            decimal req = ((r2 * rL) / (r2 + rL));
-                            calculatePower(vinEntry, (req+ r1));
+                            label_voutWarning.Visible = true;    
                         }
+
+                        else
+                        {
+                            label_voutWarning.Visible = false;
+                        }
+
+                        textBox_vout.Text = voutwLoad.ToString("F2");
+                        decimal req = ((r2 * rL) / (r2 + rL));
+                        calculatePower(vinEntry, (req + r1));
+
 
                     }
                     else
                     {
+                        label_voutWarning.Visible = false;
                         textBox_vout.Text = voutNormal.ToString("F2");
                         calculatePower(vinEntry, (r2 + r1));
                     }
@@ -181,6 +193,7 @@ namespace ece_calculator_bg4
             textbox_vin.Clear();
             R1_textbox.Clear();
             R2_textbox.Clear();
+            textBox_rload.Clear();
             textbox_vin.Focus();
         }
 
@@ -198,31 +211,35 @@ namespace ece_calculator_bg4
         {
             decimal current = vin / req;
             decimal powerMW = (vin * current) * 1000;
-            richTextBox_pwr.Text = powerMW.ToString("F2");
+            richTextBox_pwr.Text = powerMW.ToString("F5");
         }
 
         private void textbox_vin_TextChanged(object sender, EventArgs e)
         {
             richTextBox_pwr.Clear();
             textBox_vout.Clear();
+            label_voutWarning.Visible = false;
         }
 
         private void R1_textbox_TextChanged(object sender, EventArgs e)
         {
             richTextBox_pwr.Clear();
             textBox_vout.Clear();
+            label_voutWarning.Visible = false;
         }
 
         private void R2_textbox_TextChanged(object sender, EventArgs e)
         {
             richTextBox_pwr.Clear();
             textBox_vout.Clear();
+            label_voutWarning.Visible = false;
         }
 
         private void checkBox_load_CheckedChanged(object sender, EventArgs e)
         {
             label_rload.Visible = checkBox_load.Checked;
             textBox_rload.Visible = checkBox_load.Checked;
+            textBox_rload.Clear();
         }
 
         private void MaxPower_Click(object sender, EventArgs e)
@@ -252,10 +269,23 @@ namespace ece_calculator_bg4
                 decimal.TryParse(MaxPower.Text, out decimal maxpower);
 
                 decimal Rratio = vout / vin;
+
+                if (Rratio >= 1)
+                {
+                    //show error message and ask to re-enter values
+                    //cant have == 1 or greater than 1
+                    return;
+                }
+
                 // equation for volt divider is Vout = (r2/(r1+r2))*Vin
                 if (Rcheck.Checked)
-                {
+                {   
+                    //uses entered value instead of 1000 default
                     decimal.TryParse(R1.Text, out decimal r1);
+                    R1v = r1;
+                    R2v = (R1v * Rratio) / (1 - Rratio);
+                    R1Val.Text = R1v.ToString("F2");
+                    R2Val.Text = R2v.ToString("F2");
 
 
                 }
@@ -263,8 +293,9 @@ namespace ece_calculator_bg4
                 {
                     R1v = 1000;
                     R2v = (R1v * Rratio) / (1 - Rratio);
-                    R1Val.Text = R1v.ToString();
-                    R2Val.Text = R2v.ToString();
+                    //scaleResistors()
+                    R1Val.Text = R1v.ToString("F2");
+                    R2Val.Text = R2v.ToString("F2");
 
                     
                 }
@@ -317,6 +348,30 @@ namespace ece_calculator_bg4
         {
 
         }
+
+        private void Rcheck_CheckedChanged(object sender, EventArgs e)
+        {
+            label_r1manualEntry.Visible = Rcheck.Checked;
+            R1.Visible = Rcheck.Checked;
+            R1.Clear();
+        }
+
+        /*
+        private void scaleResistors()
+        {
+            Takes in R1 and R2 after calculation above
+            Multiplier = 1
+            calculates power
+
+            while (power >= Maxpower)
+                multiplier++ or multiplier = multiplier*10
+                R1new = R1*Multiplier
+                R2new = R2*multiplier
+                re calculate power
+
+            return scaled Resistor values
+        }
+        */
     }
 
 
