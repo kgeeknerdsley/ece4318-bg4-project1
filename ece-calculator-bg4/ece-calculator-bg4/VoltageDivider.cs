@@ -264,41 +264,44 @@ namespace ece_calculator_bg4
             if (!emptycheck)
             {
                 decimal R1v, R2v;
-                decimal.TryParse(Vin.Text, out decimal vin);
-                decimal.TryParse(Vout.Text, out decimal vout);
-                decimal.TryParse(MaxPower.Text, out decimal maxpower);
+                bool VinV, VoutV, maxpowerV;
+                VinV = decimal.TryParse(Vin.Text, out decimal vin);
+                VoutV = decimal.TryParse(Vout.Text, out decimal vout);
+                maxpowerV = decimal.TryParse(MaxPower.Text, out decimal maxpower);
+                bool check = VinV && VoutV && maxpowerV;
 
                 decimal Rratio = vout / vin;
-
-                if (Rratio >= 1)
+                if (check)
                 {
-                    //show error message and ask to re-enter values
-                    //cant have == 1 or greater than 1
-                    return;
+                    if (Rratio >= 1)
+                    {
+                        //show error message and ask to re-enter values
+                        //cant have == 1 or greater than 1
+                        MessageBox.Show("Please re-enter values.\nRemember that Vout can not be greater than Vin.");
+                        return;
+                    }
+
+                    // equation for volt divider is Vout = (r2/(r1+r2))*Vin
+                    if (Rcheck.Checked)
+                    {
+                        //uses entered value instead of 1000 default
+                        decimal.TryParse(R1.Text, out decimal r1);
+                        R1v = r1;
+                        R2v = (R1v * Rratio) / (1 - Rratio);
+                        R1Val.Text = R1v.ToString("F2");
+                        R2Val.Text = R2v.ToString("F2");
+
+
+                    }
+                    else
+                    {
+                        R1v = 1000;
+                        R2v = (R1v * Rratio) / (1 - Rratio);
+                        ScaleResistors(R1v, R2v, vin);
+
+                    }
                 }
-
-                // equation for volt divider is Vout = (r2/(r1+r2))*Vin
-                if (Rcheck.Checked)
-                {   
-                    //uses entered value instead of 1000 default
-                    decimal.TryParse(R1.Text, out decimal r1);
-                    R1v = r1;
-                    R2v = (R1v * Rratio) / (1 - Rratio);
-                    R1Val.Text = R1v.ToString("F2");
-                    R2Val.Text = R2v.ToString("F2");
-
-
-                }
-                else
-                {
-                    R1v = 1000;
-                    R2v = (R1v * Rratio) / (1 - Rratio);
-                    //scaleResistors()
-                    R1Val.Text = R1v.ToString("F2");
-                    R2Val.Text = R2v.ToString("F2");
-
-                    
-                }
+                else MessageBox.Show("Please enter positive or negative numbers only.");
 
             }
 
@@ -372,6 +375,42 @@ namespace ece_calculator_bg4
             return scaled Resistor values
         }
         */
+        private void ScaleResistors(decimal r1, decimal r2, decimal vin)
+        {
+            decimal multiplier = 1;
+            decimal R1new, R2new;
+            R1new = 0;
+            R2new = 0;
+            decimal power = calculation(r1, r2, vin);
+            decimal.TryParse(MaxPower.Text, out decimal maxpower);
+
+            while (power >= maxpower)
+            {
+                multiplier++;
+                R1new = r1 * multiplier;
+                R2new = r2 * multiplier;
+                power = calculation(R1new, R2new, vin);
+
+            }
+
+
+            R1Val.Text = R1new.ToString("F2");
+            R2Val.Text = R2new.ToString("F2");
+
+        }
+
+        private void MaxPower_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private decimal calculation(decimal r1, decimal r2, decimal vin)
+        {
+            decimal req = (r2 * r1) / (r2 + r1);
+            decimal current = vin / req;
+            decimal power = (vin * current) * 1000;
+            return power;
+        }
     }
 
 
