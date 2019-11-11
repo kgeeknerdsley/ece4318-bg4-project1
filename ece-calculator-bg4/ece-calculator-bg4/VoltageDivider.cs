@@ -301,7 +301,7 @@ namespace ece_calculator_bg4
 
             if (sum < mininputs)
             {
-                MessageBox.Show("Please enter all neecessary inputs. \nIf you do not have a R1 or R2 value, please enter 0.");
+                MessageBox.Show("Please enter all neecessary inputs.");
                 return true;
             }
             else return false;
