@@ -150,22 +150,12 @@ namespace ece_calculator_bg4
 			return result;
 		}
 
-		private float r1UnitMultiplier()
-		{
-			string units = r1Units.Text;
-			float result = -1;
-
-			
-
-			return result;
-		}
-
-		private float unitMultiplier(TextBox box)
+		private float unitMultiplier(ComboBox box)
 		{
 			string units = box.Text;
 			float result = -1;
 
-			if(box == R1Box || box == R2Box)
+			if(box == r1Units || box == r2Units)
 			{
 				if(units == "Ω")
 				{
@@ -185,7 +175,7 @@ namespace ece_calculator_bg4
 				}
 				else if (units == "μF")
 				{
-					result = (float)0.00001;
+					result = (float)0.000001;
 				}
 				else if (units == "nF")
 				{
@@ -206,13 +196,13 @@ namespace ece_calculator_bg4
 
 			if(r1 == -1) //if resistor 1 is missing
 			{
-				result = (float)(1.0 / (2 * Math.PI * (c1*unitMultiplier(C1Box)) * fc));
+				result = (float)(1.0 / (2 * Math.PI * (c1*unitMultiplier(c1Units)) * fc));
 			} else if(c1 == -1)
 			{
-				result = (float)(1.0 / (2 * Math.PI * (r1*unitMultiplier(R1Box)) * fc));
+				result = (float)(1.0 / (2 * Math.PI * (r1*unitMultiplier(r1Units)) * fc));
 			} else
 			{
-				result = (float)(1.0 / (2 * Math.PI * (c1*unitMultiplier(C1Box)) * (r1*unitMultiplier(R1Box))));
+				result = (float)(1.0 / (2 * Math.PI * (c1*unitMultiplier(c1Units)) * (r1*unitMultiplier(r1Units))));
 			}
 
 			
