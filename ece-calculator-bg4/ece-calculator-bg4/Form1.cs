@@ -116,5 +116,11 @@ namespace ece_calculator_bg4
 			}
 			return result; //otherwise return false
 		}
-	}
+
+        private void button_cerveza_Click(object sender, EventArgs e)
+        {
+            CervezaCalculator cervezacalc = new CervezaCalculator();
+            cervezacalc.Show();
+        }
+    }
 }
