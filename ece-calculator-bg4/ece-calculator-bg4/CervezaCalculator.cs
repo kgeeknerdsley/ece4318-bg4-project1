@@ -32,13 +32,13 @@ namespace ece_calculator_bg4
             decimal deathNum = ((((0.40m + (totalHours * 0.015m)) * weightLbs) / (12 * PAC * 0.075m))) - numCervezas;
             richTextBox_bac.Text = bac.ToString("F2");
             richTextBox_cervezasDeath.Text = deathNum.ToString("F0");
-            pictureBox_currentGif.Image = beer_gifs.Images[0];
+            //pictureBox_currentGif.Image = beer_gifs.Images[0];
             if (bac > 0.10m)
             {
                 linkLabel_alcHelp.Visible = true;
             }
             else linkLabel_alcHelp.Visible = false;
-
+            pictureBox_currentGif.Visible = true;
 
         }
 
@@ -50,6 +50,7 @@ namespace ece_calculator_bg4
         private void CervezaCalculator_Load(object sender, EventArgs e)
         {
             linkLabel_alcHelp.Visible = false;
+            pictureBox_currentGif.Visible = false;
         }
 
         private void linkLabel_alcHelp_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

@@ -202,9 +202,11 @@
             // pictureBox_currentGif
             // 
             this.pictureBox_currentGif.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox_currentGif.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_currentGif.Image")));
             this.pictureBox_currentGif.Location = new System.Drawing.Point(1707, 253);
             this.pictureBox_currentGif.Name = "pictureBox_currentGif";
-            this.pictureBox_currentGif.Size = new System.Drawing.Size(871, 767);
+            this.pictureBox_currentGif.Size = new System.Drawing.Size(480, 367);
+            this.pictureBox_currentGif.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox_currentGif.TabIndex = 17;
             this.pictureBox_currentGif.TabStop = false;
             // 
