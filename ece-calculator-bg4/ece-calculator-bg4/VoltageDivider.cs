@@ -288,8 +288,9 @@ namespace ece_calculator_bg4
                         decimal.TryParse(R1.Text, out decimal r1);
                         R1v = r1;
                         R2v = (R1v * Rratio) / (1 - Rratio);
-                        R1Val.Text = R1v.ToString("F2");
-                        R2Val.Text = R2v.ToString("F2");
+                        ScaleResistors(R1v, R2v, vin);
+                        //R1Val.Text = R1v.ToString("F2");
+                        //R2Val.Text = R2v.ToString("F2");
 
 
                     }
@@ -335,7 +336,7 @@ namespace ece_calculator_bg4
 
             if (sum < mininputs)
             {
-                MessageBox.Show("Please enter all neecessary inputs.");
+                MessageBox.Show("Please enter all necessary inputs.");
                 return true;
             }
             else return false;
@@ -379,10 +380,11 @@ namespace ece_calculator_bg4
         {
             decimal multiplier = 1;
             decimal R1new, R2new;
-            R1new = 0;
-            R2new = 0;
+            R1new = r1;
+            R2new = r2;
             decimal power = calculation(r1, r2, vin);
             decimal.TryParse(MaxPower.Text, out decimal maxpower);
+            //decimal maxpowerMW = maxpower * 1000;
 
             while (power >= maxpower)
             {
@@ -406,9 +408,10 @@ namespace ece_calculator_bg4
 
         private decimal calculation(decimal r1, decimal r2, decimal vin)
         {
-            decimal req = (r2 * r1) / (r2 + r1);
+            // decimal req = (r2 * r1) / (r2 + r1);
+            decimal req = r2 + r1;
             decimal current = vin / req;
-            decimal power = (vin * current) * 1000;
+            decimal power = (vin * current)*1000;
             return power;
         }
     }
