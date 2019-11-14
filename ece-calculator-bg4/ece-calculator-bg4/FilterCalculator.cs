@@ -15,7 +15,9 @@ namespace ece_calculator_bg4
 		public FilterCalculator()
 		{
 			InitializeComponent();
-		}
+            R2Box.Text = "Unused";
+            C2Box.Text = "Unused";
+        }
 
 		//0 = low pass
 		//1 = high pass
@@ -60,10 +62,18 @@ namespace ece_calculator_bg4
 
 			//clear all the boxes when calculator type switches
 			R1Box.Text = "";
-			R2Box.Text = "";
 			C1Box.Text = "";
-			C2Box.Text = "";
 			fcBox.Text = "";
+            if (calcType != 2)
+            {
+                R2Box.Text = "Unused";
+                C2Box.Text = "Unused";
+            }
+            else
+            {
+                R2Box.Text = "";
+                C2Box.Text = "";
+            }
 		}
 
 		private void startFilterCalc_Click(object sender, EventArgs e)
@@ -76,66 +86,159 @@ namespace ece_calculator_bg4
 			float c2_val = -1;
 			float fc_val = -1;
 
-			//determine if we have 1 or 2 RCs
-			if(calcType == 0 || calcType == 1) //working with low and high pass here
-			{
+            //determine if we have 1 or 2 RCs
+            if (calcType == 0 || calcType == 1 || calcType == 3) //working with low and high pass here, also band stop
+            {
 
-				R2Box.Text = "Unused";
-				C2Box.Text = "Unused";
+                //check for the box with a -1, if it's -1 that means it's blank
 
-				//check for the box with a -1, if it's -1 that means it's blank
+                if (isElementMissing(R1Box)) //0 is missing r1
+                {
+                    missingBox = 0;
+                    blankCount++;
+                }
 
-				if(isElementMissing(R1Box)) //0 is missing r1
-				{
-					missingBox = 0;
-					blankCount++;
-				}
+                if (isElementMissing(C1Box)) //1 is missing c1
+                {
+                    missingBox = 1;
+                    blankCount++;
+                }
 
-				if (isElementMissing(C1Box)) //1 is missing c1
-				{
-					missingBox = 1;
-					blankCount++;
-				}
+                if (isElementMissing(fcBox)) //2 is missing fc
+                {
+                    missingBox = 2;
+                    blankCount++;
+                }
 
-				if (isElementMissing(fcBox)) //2 is missing fc
-				{
-					missingBox = 2;
-					blankCount++;
-				}
-				
-				if(blankCount > 1) //if too many missing
-				{
-					MessageBox.Show("Only one box may be blank. Please fill in missing variables.");
-				} else if(blankCount < 1) //if nothing missing
-				{
-					MessageBox.Show("You must leave one box blank to complete the calculation.");
-				} else //if we pass those checks
-				{
-					//if any of the try parse fails, it won't continue
-					if(validateNumerical(ref r1_val, ref c1_val, ref fc_val, missingBox))
-					{
-						//MessageBox.Show(r1_val.ToString() + " " + c1_val.ToString() + " " + fc_val.ToString());
-						if(missingBox == 0)
-						{
-							R1Box.Text = calculateLP_HP(r1_val, c1_val, fc_val).ToString();
-						} else if(missingBox == 1)
-						{
-							C1Box.Text = calculateLP_HP(r1_val, c1_val, fc_val).ToString();
-						} else if(missingBox == 2)
-						{
-							fcBox.Text = calculateLP_HP(r1_val, c1_val, fc_val).ToString();
-						}
+                if (blankCount > 1) //if too many missing
+                {
+                    MessageBox.Show("Only one box may be blank. Please fill in missing variables.");
+                }
+                else if (blankCount < 1) //if nothing missing
+                {
+                    MessageBox.Show("You must leave one box blank to complete the calculation.");
+                }
+                else if (calcType != 3)//if we pass those checks
+                {
+                    //if any of the try parse fails, it won't continue
+                    if (validateNumerical(ref r1_val, ref c1_val, ref fc_val, missingBox))
+                    {
+                        //MessageBox.Show(r1_val.ToString() + " " + c1_val.ToString() + " " + fc_val.ToString());
+                        if (missingBox == 0)
+                        {
+                            R1Box.Text = calculateLP_HP(r1_val, c1_val, fc_val, r1Units, c1Units).ToString();
+                        }
+                        else if (missingBox == 1)
+                        {
+                            C1Box.Text = calculateLP_HP(r1_val, c1_val, fc_val, r1Units, c1Units).ToString();
+                        }
+                        else if (missingBox == 2)
+                        {
+                            fcBox.Text = calculateLP_HP(r1_val, c1_val, fc_val, r1Units, c1Units).ToString();
+                        }
 
-						
-					} else
-					{
-						MessageBox.Show("All inputs must be numerical input only!");
-					}
-				}
-			} else
-			{
-				MessageBox.Show("Band pass or stop");
-			}
+                    }
+                    else
+                    {
+                        MessageBox.Show("All inputs must be numerical input only!");
+                    }
+                }
+                else
+                {
+                    if (validateNumerical(ref r1_val, ref c1_val, ref fc_val, missingBox))
+                    {
+                        //MessageBox.Show(r1_val.ToString() + " " + c1_val.ToString() + " " + fc_val.ToString());
+                        if (missingBox == 0)
+                        {
+                            R1Box.Text = (calculateBandStop(r1_val, c1_val, fc_val) / unitMultiplier(r1Units)).ToString();
+                        }
+                        else if (missingBox == 1)
+                        {
+                            C1Box.Text = (calculateBandStop(r1_val, c1_val, fc_val) / unitMultiplier(c1Units)).ToString();
+                        }
+                        else if (missingBox == 2)
+                        {
+                            fcBox.Text = calculateBandStop(r1_val, c1_val, fc_val).ToString();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("All inputs must be numerical input only!");
+                    }
+                }
+            }
+            else if (calcType == 2)// band pass
+            {
+                if (isElementMissing(R1Box)) //0 is missing r1
+                {
+                    missingBox = 0;
+                    blankCount++;
+                }
+
+                if (isElementMissing(C1Box)) //1 is missing c1
+                {
+                    missingBox = 1;
+                    blankCount++;
+                }
+
+                if (isElementMissing(fcBox)) //2 is missing fc
+                {
+                    missingBox = 2;
+                    blankCount++;
+                }
+
+                if (isElementMissing(R2Box)) //3 is missing r1
+                {
+                    missingBox = 3;
+                    blankCount++;
+                }
+
+                if (isElementMissing(C2Box)) //4 is missing c1
+                {
+                    missingBox = 4;
+                    blankCount++;
+                }
+
+                if (blankCount > 1) //if too many missing
+                {
+                    MessageBox.Show("Only one box may be blank. Please fill in missing variables.");
+                }
+                else if (blankCount < 1) //if nothing missing
+                {
+                    MessageBox.Show("You must leave one box blank to complete the calculation.");
+                }
+                else
+                {
+                    if (validateNumerical(ref r1_val, ref r2_val, ref c1_val, ref c2_val, ref fc_val, missingBox))
+                    {
+                        //MessageBox.Show(r1_val.ToString() + " " + c1_val.ToString() + " " + fc_val.ToString());
+                        if (missingBox == 0)
+                        {
+                            R1Box.Text = (calculateBandPass(r1_val, r2_val, c1_val, c2_val, fc_val) / unitMultiplier(r1Units)).ToString();
+                        }
+                        else if (missingBox == 1)
+                        {
+                            C1Box.Text = (calculateBandPass(r1_val, r2_val, c1_val, c2_val, fc_val) / unitMultiplier(c1Units)).ToString();
+                        }
+                        else if (missingBox == 2)
+                        {
+                            fcBox.Text = calculateBandPass(r1_val, r2_val, c1_val, c2_val, fc_val).ToString();
+                        }
+                        else if (missingBox == 3)
+                        {
+                            R2Box.Text = (calculateBandPass(r1_val, r2_val, c1_val, c2_val, fc_val) / unitMultiplier(r2Units)).ToString();
+                        }
+                        else if (missingBox == 4)
+                        {
+                            C2Box.Text = (calculateBandPass(r1_val, r2_val, c1_val, c2_val, fc_val) / unitMultiplier(c2Units)).ToString();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("All inputs must be numerical input only!");
+                    }
+                }
+            }
 		}
 
 		private bool isElementMissing(TextBox box)
@@ -190,24 +293,63 @@ namespace ece_calculator_bg4
 			return result;
 		}
 
-		private float calculateLP_HP(float r1, float c1, float fc)
+		private float calculateLP_HP(float r1, float c1, float fc, ComboBox r1Combo, ComboBox c1Combo)
 		{
 			float result = -1;
 
 			if(r1 == -1) //if resistor 1 is missing
 			{
-				result = (float)(1.0 / (2 * Math.PI * (c1*unitMultiplier(c1Units)) * fc));
+				result = (float)(1.0 / (2 * Math.PI * (c1*unitMultiplier(c1Combo)) * fc));
 			} else if(c1 == -1)
 			{
-				result = (float)(1.0 / (2 * Math.PI * (r1*unitMultiplier(r1Units)) * fc));
+				result = (float)(1.0 / (2 * Math.PI * (r1*unitMultiplier(r1Combo)) * fc));
 			} else
 			{
-				result = (float)(1.0 / (2 * Math.PI * (c1*unitMultiplier(c1Units)) * (r1*unitMultiplier(r1Units))));
+				result = (float)(1.0 / (2 * Math.PI * (c1*unitMultiplier(c1Combo)) * (r1*unitMultiplier(r1Combo))));
 			}
 
 			
 			return result;
 		}
+
+        private float calculateBandPass(float r1, float r2, float c1, float c2, float fc)
+        {
+            float result = -1;
+            float fl = -1, fh = -1;
+            if (r1 == -1 || c1 == -1)
+            {
+                fl = calculateLP_HP(r2, c2, fl, r2Units, c2Units);
+                fh = (float)Math.Pow(fc, 2) / fl;
+                result = calculateLP_HP(r1, c1, fh, r1Units, c1Units);
+            } else if (r2 == -1 || c2 == -1)
+            {
+                fh = calculateLP_HP(r1, c1, fh, r1Units, c1Units);
+                fl = (float)Math.Pow(fc, 2) / fh;
+                result = calculateLP_HP(r2, c2, fl, r2Units, c2Units);
+            } else if (fc == -1)
+            {
+                fl = calculateLP_HP(r2, c2, fl, r2Units, c2Units);
+                fh = calculateLP_HP(r1, c1, fh, r1Units, c1Units);
+                result = (float)Math.Sqrt(fl * fh);
+            }
+            return result;
+        }
+
+        private float calculateBandStop(float r1, float c1, float fn)
+        {
+            float result = -1;
+            if (r1 == -1)
+            {
+                result = (float)(1.0 / (4 * Math.PI * (c1 * unitMultiplier(c1Units)) * fn));
+            } else if (c1 == -1)
+            {
+                result = (float)(1.0 / (4 * Math.PI * (r1 * unitMultiplier(r1Units)) * fn));
+            } else
+            {
+                result = (float)(1.0 / 4 * Math.PI * (r1 * unitMultiplier(r1Units)) * (c1 * unitMultiplier(c1Units)));
+            }
+            return result;
+        }
 
 		private bool validateNumerical(ref float r1, ref float c1, ref float fc, int missingBox)
 		{
@@ -221,7 +363,6 @@ namespace ece_calculator_bg4
 				case 0:
 					c1_success = float.TryParse(C1Box.Text, out c1);
 					fc_success = float.TryParse(fcBox.Text, out fc);
-					//return c1_success && fc_success;
 					result = c1_success && fc_success;
 					break;
 				case 1:
@@ -241,7 +382,53 @@ namespace ece_calculator_bg4
 
 		private bool validateNumerical(ref float r1, ref float r2, ref float c1, ref float c2, ref float fc, int missingBox)
 		{
-			return false;
-		}
+            bool result = false;
+            bool r1_success = false;
+            bool r2_success = false;
+            bool c1_success = false;
+            bool c2_success = false;
+            bool fc_success = false;
+
+            switch (missingBox)
+            {
+                case 0:
+                    r2_success = float.TryParse(R2Box.Text, out r2);
+                    c1_success = float.TryParse(C1Box.Text, out c1);
+                    c2_success = float.TryParse(C2Box.Text, out c2);
+                    fc_success = float.TryParse(fcBox.Text, out fc);
+                    result = r2_success && c1_success && c2_success && fc_success;
+                    break;
+                case 1:
+                    r1_success = float.TryParse(R1Box.Text, out r1);
+                    r2_success = float.TryParse(R2Box.Text, out r2);
+                    c2_success = float.TryParse(C2Box.Text, out c2);
+                    fc_success = float.TryParse(fcBox.Text, out fc);
+                    result = r1_success && r2_success && c2_success && fc_success;
+                    break;
+                case 2:
+                    r1_success = float.TryParse(R1Box.Text, out r1);
+                    r2_success = float.TryParse(R2Box.Text, out r2);
+                    c1_success = float.TryParse(C1Box.Text, out c1);
+                    c2_success = float.TryParse(C2Box.Text, out c2);
+                    result = r1_success && r2_success && c1_success && c2_success;
+                    break;
+                case 3:
+                    r1_success = float.TryParse(R1Box.Text, out r1);
+                    c1_success = float.TryParse(C1Box.Text, out c1);
+                    c2_success = float.TryParse(C2Box.Text, out c2);
+                    fc_success = float.TryParse(fcBox.Text, out fc);
+                    result = r1_success && c1_success && c2_success && fc_success;
+                    break;
+                case 4:
+                    r1_success = float.TryParse(R1Box.Text, out r1);
+                    r2_success = float.TryParse(R2Box.Text, out r2);
+                    c1_success = float.TryParse(C1Box.Text, out c1);
+                    fc_success = float.TryParse(fcBox.Text, out fc);
+                    result = r1_success && r2_success && c1_success && fc_success;
+                    break;
+            }
+
+            return result;
+        }
 	}
 }
