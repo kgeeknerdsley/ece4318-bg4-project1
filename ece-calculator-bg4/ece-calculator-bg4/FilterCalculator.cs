@@ -126,11 +126,11 @@ namespace ece_calculator_bg4
                         //MessageBox.Show(r1_val.ToString() + " " + c1_val.ToString() + " " + fc_val.ToString());
                         if (missingBox == 0)
                         {
-                            R1Box.Text = calculateLP_HP(r1_val, c1_val, fc_val, r1Units, c1Units).ToString();
+                            R1Box.Text = (calculateLP_HP(r1_val, c1_val, fc_val, r1Units, c1Units) / unitMultiplier(r1Units)).ToString();
                         }
                         else if (missingBox == 1)
                         {
-                            C1Box.Text = calculateLP_HP(r1_val, c1_val, fc_val, r1Units, c1Units).ToString();
+                            C1Box.Text = (calculateLP_HP(r1_val, c1_val, fc_val, r1Units, c1Units) / unitMultiplier(c1Units)).ToString();
                         }
                         else if (missingBox == 2)
                         {
