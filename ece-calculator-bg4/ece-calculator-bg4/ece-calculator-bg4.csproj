@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -84,6 +85,9 @@
     <Compile Include="VoltageDivider.Designer.cs">
       <DependentUpon>VoltageDivider.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CommonChipPins.resx">
+      <DependentUpon>CommonChipPins.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FilterCalculator.resx">
       <DependentUpon>FilterCalculator.cs</DependentUpon>
     </EmbeddedResource>
