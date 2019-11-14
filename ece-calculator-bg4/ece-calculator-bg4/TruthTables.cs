@@ -20,23 +20,23 @@ namespace ece_calculator_bg4
 
         private void nOTToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Image image = ece_calculator_bg4.resources.NOT;
-            pictureBox1.Image = image;
+			Image image = global::ece_calculator_bg4.Properties.Resources.NOT;
+			pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;
         }
 
         private void aNDToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Image image = ece_calculator_bg4.resources.AND;
-            pictureBox1.Image = image;
+            Image image = global::ece_calculator_bg4.Properties.Resources.AND;
+			pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;
         }
 
         private void oRToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Image image = ece_calculator_bg4.resources.OR;
+            Image image = global::ece_calculator_bg4.Properties.Resources.OR;
             pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;
@@ -44,7 +44,7 @@ namespace ece_calculator_bg4
 
         private void nANDToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Image image = ece_calculator_bg4.resources.NAND;
+            Image image = global::ece_calculator_bg4.Properties.Resources.NAND;
             pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;
@@ -52,7 +52,7 @@ namespace ece_calculator_bg4
 
         private void nORToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Image image = ece_calculator_bg4.resources.NOR;
+            Image image = global::ece_calculator_bg4.Properties.Resources.NOR;
             pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;
@@ -60,7 +60,7 @@ namespace ece_calculator_bg4
 
         private void xORToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Image image = ece_calculator_bg4.resources.XOR;
+            Image image = global::ece_calculator_bg4.Properties.Resources.XOR;
             pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;
@@ -68,7 +68,7 @@ namespace ece_calculator_bg4
 
         private void xNORToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Image image = ece_calculator_bg4.resources.XNOR;
+            Image image = global::ece_calculator_bg4.Properties.Resources.XNOR;
             pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;
@@ -76,7 +76,7 @@ namespace ece_calculator_bg4
 
         private void MUXtoolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Image image = ece_calculator_bg4.resources.MUX;
+            Image image = global::ece_calculator_bg4.Properties.Resources.MUX;
             pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;
@@ -84,7 +84,7 @@ namespace ece_calculator_bg4
 
         private void DEMUXtoolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Image image = ece_calculator_bg4.resources.DEMUX;
+            Image image = global::ece_calculator_bg4.Properties.Resources.DEMUX;
             pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;
@@ -92,7 +92,7 @@ namespace ece_calculator_bg4
 
         private void threeStateLogicToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Image image = ece_calculator_bg4.resources.TSL;
+            Image image = global::ece_calculator_bg4.Properties.Resources.TSL;
             pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;
@@ -100,7 +100,7 @@ namespace ece_calculator_bg4
 
         private void dECODER24ToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Image image = ece_calculator_bg4.resources.DECODER;
+            Image image = global::ece_calculator_bg4.Properties.Resources.DECODER;
             pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;
@@ -108,7 +108,7 @@ namespace ece_calculator_bg4
 
         private void eNCODER24ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Image image = ece_calculator_bg4.resources.ENCODER;
+            Image image = global::ece_calculator_bg4.Properties.Resources.ENCODER;
             pictureBox1.Image = image;
             pictureBox1.Height = image.Height;
             pictureBox1.Width = image.Width;

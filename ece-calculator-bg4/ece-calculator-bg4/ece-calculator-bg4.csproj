@@ -104,6 +104,9 @@
     <EmbeddedResource Include="ResistorColor.resx">
       <DependentUpon>ResistorColor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="TruthTables.resx">
+      <DependentUpon>TruthTables.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -117,7 +120,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="resources\lowpass-temp.PNG" />
   </ItemGroup>
@@ -132,7 +134,20 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\lowpass-placeholder.png" />
-
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\AND.png" />
+    <Content Include="resources\DECODER.bmp" />
+    <Content Include="resources\DEMUX.png" />
+    <Content Include="resources\ENCODER.bmp" />
+    <Content Include="resources\MUX.png" />
+    <Content Include="resources\NAND.png" />
+    <Content Include="resources\NOR.png" />
+    <Content Include="resources\NOT.png" />
+    <Content Include="resources\OR.png" />
+    <Content Include="resources\TSL.png" />
+    <Content Include="resources\XNOR.png" />
+    <Content Include="resources\XOR.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

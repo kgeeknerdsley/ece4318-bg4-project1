@@ -63,6 +63,16 @@ namespace ece_calculator_bg4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AND {
+            get {
+                object obj = ResourceManager.GetObject("AND", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bandpass_placeholder {
             get {
                 object obj = ResourceManager.GetObject("bandpass-placeholder", resourceCulture);
@@ -76,6 +86,36 @@ namespace ece_calculator_bg4.Properties {
         internal static System.Drawing.Bitmap bandstop_placeholder {
             get {
                 object obj = ResourceManager.GetObject("bandstop-placeholder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DECODER {
+            get {
+                object obj = ResourceManager.GetObject("DECODER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap DEMUX {
+            get {
+                object obj = ResourceManager.GetObject("DEMUX", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ENCODER {
+            get {
+                object obj = ResourceManager.GetObject("ENCODER", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +146,86 @@ namespace ece_calculator_bg4.Properties {
         internal static System.Drawing.Bitmap lowpass_temp {
             get {
                 object obj = ResourceManager.GetObject("lowpass-temp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap MUX {
+            get {
+                object obj = ResourceManager.GetObject("MUX", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NAND {
+            get {
+                object obj = ResourceManager.GetObject("NAND", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NOR {
+            get {
+                object obj = ResourceManager.GetObject("NOR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NOT {
+            get {
+                object obj = ResourceManager.GetObject("NOT", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OR {
+            get {
+                object obj = ResourceManager.GetObject("OR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TSL {
+            get {
+                object obj = ResourceManager.GetObject("TSL", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XNOR {
+            get {
+                object obj = ResourceManager.GetObject("XNOR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap XOR {
+            get {
+                object obj = ResourceManager.GetObject("XOR", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
