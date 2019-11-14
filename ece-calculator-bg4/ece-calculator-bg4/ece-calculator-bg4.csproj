@@ -72,6 +72,7 @@
     <Compile Include="ResistorColor.Designer.cs">
       <DependentUpon>ResistorColor.cs</DependentUpon>
     </Compile>
+    <Compile Include="resources\resources.cs" />
     <Compile Include="TruthTables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +117,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+
   <ItemGroup>
     <None Include="resources\lowpass-temp.PNG" />
   </ItemGroup>
@@ -130,6 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="resources\lowpass-placeholder.png" />
+
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
