@@ -36,7 +36,7 @@
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.addFileBtn = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.removeFile = new System.Windows.Forms.Button();
             this.fileListBox = new System.Windows.Forms.ListBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
@@ -48,18 +48,21 @@
             // 
             this.groupBox1.Controls.Add(this.addClassBtn);
             this.groupBox1.Controls.Add(this.classText);
-            this.groupBox1.Location = new System.Drawing.Point(78, 33);
+            this.groupBox1.Location = new System.Drawing.Point(29, 14);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(427, 125);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox1.Size = new System.Drawing.Size(160, 52);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Add Class";
             // 
             // addClassBtn
             // 
-            this.addClassBtn.Location = new System.Drawing.Point(297, 50);
+            this.addClassBtn.Location = new System.Drawing.Point(111, 21);
+            this.addClassBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.addClassBtn.Name = "addClassBtn";
-            this.addClassBtn.Size = new System.Drawing.Size(124, 48);
+            this.addClassBtn.Size = new System.Drawing.Size(46, 20);
             this.addClassBtn.TabIndex = 1;
             this.addClassBtn.Text = "Add";
             this.addClassBtn.UseVisualStyleBackColor = true;
@@ -67,27 +70,31 @@
             // 
             // classText
             // 
-            this.classText.Location = new System.Drawing.Point(6, 56);
+            this.classText.Location = new System.Drawing.Point(2, 23);
+            this.classText.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.classText.Name = "classText";
-            this.classText.Size = new System.Drawing.Size(285, 38);
+            this.classText.Size = new System.Drawing.Size(109, 20);
             this.classText.TabIndex = 0;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.checkedListBox1);
-            this.groupBox2.Location = new System.Drawing.Point(78, 182);
+            this.groupBox2.Location = new System.Drawing.Point(29, 76);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(421, 410);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox2.Size = new System.Drawing.Size(158, 172);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Existing Classes";
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(6, 340);
+            this.button2.Location = new System.Drawing.Point(2, 143);
+            this.button2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(409, 60);
+            this.button2.Size = new System.Drawing.Size(153, 25);
             this.button2.TabIndex = 1;
             this.button2.Text = "Remove Checked";
             this.button2.UseVisualStyleBackColor = true;
@@ -96,51 +103,56 @@
             // checkedListBox1
             // 
             this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.Location = new System.Drawing.Point(6, 50);
+            this.checkedListBox1.Location = new System.Drawing.Point(2, 21);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(409, 284);
+            this.checkedListBox1.Size = new System.Drawing.Size(156, 109);
             this.checkedListBox1.TabIndex = 0;
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.addFileBtn);
-            this.groupBox3.Controls.Add(this.button4);
+            this.groupBox3.Controls.Add(this.removeFile);
             this.groupBox3.Controls.Add(this.fileListBox);
-            this.groupBox3.Location = new System.Drawing.Point(600, 33);
+            this.groupBox3.Location = new System.Drawing.Point(225, 14);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(402, 559);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox3.Size = new System.Drawing.Size(151, 234);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Course Datasheets";
             // 
             // addFileBtn
             // 
-            this.addFileBtn.Location = new System.Drawing.Point(6, 41);
+            this.addFileBtn.Location = new System.Drawing.Point(2, 17);
+            this.addFileBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.addFileBtn.Name = "addFileBtn";
-            this.addFileBtn.Size = new System.Drawing.Size(169, 53);
+            this.addFileBtn.Size = new System.Drawing.Size(63, 22);
             this.addFileBtn.TabIndex = 3;
             this.addFileBtn.Text = "Add File";
             this.addFileBtn.UseVisualStyleBackColor = true;
             this.addFileBtn.Click += new System.EventHandler(this.addFileBtn_Click);
             // 
-            // button4
+            // removeFile
             // 
-            this.button4.Location = new System.Drawing.Point(6, 490);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(390, 60);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Remove Selected";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.removeFile.Location = new System.Drawing.Point(2, 205);
+            this.removeFile.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.removeFile.Name = "removeFile";
+            this.removeFile.Size = new System.Drawing.Size(146, 25);
+            this.removeFile.TabIndex = 2;
+            this.removeFile.Text = "Remove Selected";
+            this.removeFile.UseVisualStyleBackColor = true;
+            this.removeFile.Click += new System.EventHandler(this.removeFileBtn);
             // 
             // fileListBox
             // 
             this.fileListBox.FormattingEnabled = true;
-            this.fileListBox.ItemHeight = 31;
-            this.fileListBox.Location = new System.Drawing.Point(6, 108);
+            this.fileListBox.Location = new System.Drawing.Point(2, 45);
+            this.fileListBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.fileListBox.Name = "fileListBox";
-            this.fileListBox.Size = new System.Drawing.Size(390, 376);
+            this.fileListBox.Size = new System.Drawing.Size(149, 160);
             this.fileListBox.TabIndex = 0;
             this.fileListBox.SelectedIndexChanged += new System.EventHandler(this.fileListBox_SelectedIndexChanged);
             // 
@@ -151,12 +163,13 @@
             // 
             // CommonChipPins
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 31F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1124, 694);
+            this.ClientSize = new System.Drawing.Size(422, 291);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
             this.Name = "CommonChipPins";
             this.Text = "CommonChipPins";
             this.groupBox1.ResumeLayout(false);
@@ -176,7 +189,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button removeFile;
         private System.Windows.Forms.ListBox fileListBox;
         private System.Windows.Forms.Button addFileBtn;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
