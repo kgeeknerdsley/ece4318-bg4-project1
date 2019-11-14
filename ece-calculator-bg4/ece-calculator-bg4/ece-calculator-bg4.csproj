@@ -72,6 +72,7 @@
     <Compile Include="ResistorColor.Designer.cs">
       <DependentUpon>ResistorColor.cs</DependentUpon>
     </Compile>
+    <Compile Include="resources\resources.cs" />
     <Compile Include="TruthTables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +112,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="resources\AND.png" />
+    <Content Include="resources\DECODER.bmp" />
+    <Content Include="resources\DEMUX.png" />
+    <Content Include="resources\ENCODER.bmp" />
+    <Content Include="resources\MUX.png" />
+    <Content Include="resources\NAND.png" />
+    <Content Include="resources\NOR.png" />
+    <Content Include="resources\NOT.png" />
+    <Content Include="resources\OR.png" />
+    <Content Include="resources\TSL.png" />
+    <Content Include="resources\XNOR.png" />
+    <Content Include="resources\XOR.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
