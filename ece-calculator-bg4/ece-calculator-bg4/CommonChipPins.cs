@@ -17,10 +17,17 @@ namespace ece_calculator_bg4
 		{
 			InitializeComponent();
 
+            bool exists = System.IO.Directory.Exists(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources");
+            if(!exists){
+                System.IO.Directory.CreateDirectory(Path.GetDirectoryName(Application.ExecutablePath) + "\\Resources");
+            }
+
+
             addFileBtn.Enabled = false;
             removeFile.Enabled = false;
             fileListBox.DoubleClick += new EventHandler(fileListBox_DoubleClick);
 
+        
 
             loadClassListBox();     // Display/Load All Class Files
             System.Diagnostics.Debug.WriteLine("Initialized Correctly");

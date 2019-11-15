@@ -49,9 +49,9 @@
             this.groupBox1.Controls.Add(this.addClassBtn);
             this.groupBox1.Controls.Add(this.classText);
             this.groupBox1.Location = new System.Drawing.Point(29, 14);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(1);
             this.groupBox1.Size = new System.Drawing.Size(160, 52);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
@@ -60,7 +60,7 @@
             // addClassBtn
             // 
             this.addClassBtn.Location = new System.Drawing.Point(111, 21);
-            this.addClassBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.addClassBtn.Margin = new System.Windows.Forms.Padding(1);
             this.addClassBtn.Name = "addClassBtn";
             this.addClassBtn.Size = new System.Drawing.Size(46, 20);
             this.addClassBtn.TabIndex = 1;
@@ -71,7 +71,7 @@
             // classText
             // 
             this.classText.Location = new System.Drawing.Point(2, 23);
-            this.classText.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.classText.Margin = new System.Windows.Forms.Padding(1);
             this.classText.Name = "classText";
             this.classText.Size = new System.Drawing.Size(109, 20);
             this.classText.TabIndex = 0;
@@ -81,9 +81,9 @@
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.checkedListBox1);
             this.groupBox2.Location = new System.Drawing.Point(29, 76);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(1);
             this.groupBox2.Size = new System.Drawing.Size(158, 172);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
@@ -92,7 +92,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(2, 143);
-            this.button2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.button2.Margin = new System.Windows.Forms.Padding(1);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(153, 25);
             this.button2.TabIndex = 1;
@@ -104,7 +104,7 @@
             // 
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Location = new System.Drawing.Point(2, 21);
-            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.checkedListBox1.Margin = new System.Windows.Forms.Padding(1);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(156, 109);
             this.checkedListBox1.TabIndex = 0;
@@ -116,9 +116,9 @@
             this.groupBox3.Controls.Add(this.removeFile);
             this.groupBox3.Controls.Add(this.fileListBox);
             this.groupBox3.Location = new System.Drawing.Point(225, 14);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(1);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(1);
             this.groupBox3.Size = new System.Drawing.Size(151, 234);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
@@ -127,7 +127,7 @@
             // addFileBtn
             // 
             this.addFileBtn.Location = new System.Drawing.Point(2, 17);
-            this.addFileBtn.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.addFileBtn.Margin = new System.Windows.Forms.Padding(1);
             this.addFileBtn.Name = "addFileBtn";
             this.addFileBtn.Size = new System.Drawing.Size(63, 22);
             this.addFileBtn.TabIndex = 3;
@@ -138,7 +138,7 @@
             // removeFile
             // 
             this.removeFile.Location = new System.Drawing.Point(2, 205);
-            this.removeFile.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.removeFile.Margin = new System.Windows.Forms.Padding(1);
             this.removeFile.Name = "removeFile";
             this.removeFile.Size = new System.Drawing.Size(146, 25);
             this.removeFile.TabIndex = 2;
@@ -150,7 +150,7 @@
             // 
             this.fileListBox.FormattingEnabled = true;
             this.fileListBox.Location = new System.Drawing.Point(2, 45);
-            this.fileListBox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.fileListBox.Margin = new System.Windows.Forms.Padding(1);
             this.fileListBox.Name = "fileListBox";
             this.fileListBox.Size = new System.Drawing.Size(149, 160);
             this.fileListBox.TabIndex = 0;
@@ -169,7 +169,7 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "CommonChipPins";
             this.Text = "CommonChipPins";
             this.groupBox1.ResumeLayout(false);
