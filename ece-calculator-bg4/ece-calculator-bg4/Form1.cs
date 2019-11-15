@@ -28,11 +28,5 @@ namespace ece_calculator_bg4
 			FilterCalculator filterCalc = new FilterCalculator(); //all forms are classes, make a new instance
 			filterCalc.Show();//show the new form
 		}
-
-        private void commonChipStart_Click(object sender, EventArgs e)
-        {
-            CommonChipPins pinCalc = new CommonChipPins(); //all forms are classes, make a new instance
-            pinCalc.Show();//show the new form
-        }
     }
 }
