@@ -73,6 +73,7 @@
     <Compile Include="ResistorColor.Designer.cs">
       <DependentUpon>ResistorColor.cs</DependentUpon>
     </Compile>
+    <Compile Include="resources\resources.cs" />
     <Compile Include="TruthTables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,7 +103,17 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResistorColor.resx">
+      <DependentUpon>ResistorColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruthTables.resx">
+      <DependentUpon>TruthTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="VoltageDivider.resx">
+      <DependentUpon>VoltageDivider.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -170,6 +181,41 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+
+  <ItemGroup>
+    <None Include="resources\lowpass-temp.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\bandpass-placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\bandstop-placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\highpass-placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\lowpass-placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\AND.png" />
+    <None Include="resources\bandpass-final.png" />
+    <None Include="resources\bandstop-final.png" />
+    <Content Include="resources\DECODER.bmp" />
+    <Content Include="resources\DEMUX.png" />
+    <Content Include="resources\ENCODER.bmp" />
+    <None Include="resources\highpass-final.png" />
+    <None Include="resources\lowpass-final.png" />
+    <Content Include="resources\MUX.png" />
+    <Content Include="resources\NAND.png" />
+    <Content Include="resources\NOR.png" />
+    <Content Include="resources\NOT.png" />
+    <Content Include="resources\OR.png" />
+    <Content Include="resources\TSL.png" />
+    <None Include="resources\volt.divider.photo.tr.png" />
+    <Content Include="resources\XNOR.png" />
+    <Content Include="resources\XOR.png" />
+  </ItemGroup>
+
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
