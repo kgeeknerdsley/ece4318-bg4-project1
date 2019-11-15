@@ -100,7 +100,7 @@ namespace ece_calculator_bg4
             {
                 bool accountLoad = checkBox_load.Checked;
                 bool vinValid, r1Valid, r2Valid, rlValid;
-                decimal rL = 0;
+                decimal rL = 1;
 
 
                 vinValid = Decimal.TryParse(textbox_vin.Text, out decimal vinEntry);
@@ -116,7 +116,7 @@ namespace ece_calculator_bg4
 
                 if (inputCheck)
                 {
-                    if (r1 < 0 || r2 < 0 || rL < 0)
+                    if (r1 <= 0 || r2 <= 0 || rL <= 0)
                     {
                         MessageBox.Show("Enter positive resistor values only.");
                         return;
@@ -151,7 +151,7 @@ namespace ece_calculator_bg4
                     }
                 }
 
-                else MessageBox.Show("Please enter positive or negative numbers only.", "You fucked up",
+                else MessageBox.Show("Please enter positive or negative numbers only.", "Input Data Error",
                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else return;
@@ -277,7 +277,7 @@ namespace ece_calculator_bg4
                     {
                         //show error message and ask to re-enter values
                         //cant have == 1 or greater than 1
-                        MessageBox.Show("Please re-enter values.\nRemember that Vout can not be greater than Vin.");
+                        MessageBox.Show("Please re-enter values.\nVout can not be greater than Vin.");
                         return;
                     }
 
@@ -285,12 +285,28 @@ namespace ece_calculator_bg4
                     if (Rcheck.Checked)
                     {
                         //uses entered value instead of 1000 default
-                        decimal.TryParse(R1.Text, out decimal r1);
-                        R1v = r1;
-                        R2v = (R1v * Rratio) / (1 - Rratio);
-                        ScaleResistors(R1v, R2v, vin);
-                        //R1Val.Text = R1v.ToString("F2");
-                        //R2Val.Text = R2v.ToString("F2");
+                        bool customRValid = decimal.TryParse(R1.Text, out decimal r1);
+                        if (customRValid)
+                        {
+                            if (r1 > 0)
+                            {
+                                R1v = r1;
+                                R2v = (R1v * Rratio) / (1 - Rratio);
+                                ScaleResistors(R1v, R2v, vin);
+                                //R1Val.Text = R1v.ToString("F2");
+                                //R2Val.Text = R2v.ToString("F2");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Enter positive resistor values only.");
+                                return;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Enter numeric characters only.");
+                            return;
+                        }
 
 
                     }
