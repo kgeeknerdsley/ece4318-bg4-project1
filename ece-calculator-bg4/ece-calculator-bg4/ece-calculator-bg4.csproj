@@ -107,6 +107,9 @@
     <EmbeddedResource Include="TruthTables.resx">
       <DependentUpon>TruthTables.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="VoltageDivider.resx">
+      <DependentUpon>VoltageDivider.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -150,6 +153,7 @@
     <Content Include="resources\NOT.png" />
     <Content Include="resources\OR.png" />
     <Content Include="resources\TSL.png" />
+    <None Include="resources\volt.divider.photo.tr.png" />
     <Content Include="resources\XNOR.png" />
     <Content Include="resources\XOR.png" />
   </ItemGroup>

@@ -253,6 +253,16 @@ namespace ece_calculator_bg4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap volt_divider_photo_tr {
+            get {
+                object obj = ResourceManager.GetObject("volt_divider_photo_tr", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap XNOR {
             get {
                 object obj = ResourceManager.GetObject("XNOR", resourceCulture);
