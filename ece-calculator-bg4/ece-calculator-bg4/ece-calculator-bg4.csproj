@@ -128,5 +128,17 @@
   <ItemGroup>
     <None Include="resources\lowpass-placeholder.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\bandpass-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\bandstop-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\highpass-final.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\lowpass-final.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

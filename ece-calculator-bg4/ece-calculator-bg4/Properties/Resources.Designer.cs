@@ -63,9 +63,29 @@ namespace ece_calculator_bg4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bandpass_final {
+            get {
+                object obj = ResourceManager.GetObject("bandpass_final", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bandpass_placeholder {
             get {
                 object obj = ResourceManager.GetObject("bandpass-placeholder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bandstop_final {
+            get {
+                object obj = ResourceManager.GetObject("bandstop_final", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,9 +103,29 @@ namespace ece_calculator_bg4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap highpass_final {
+            get {
+                object obj = ResourceManager.GetObject("highpass_final", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap highpass_placeholder {
             get {
                 object obj = ResourceManager.GetObject("highpass-placeholder", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lowpass_final {
+            get {
+                object obj = ResourceManager.GetObject("lowpass_final", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

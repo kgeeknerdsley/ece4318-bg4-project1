@@ -44,19 +44,19 @@ namespace ece_calculator_bg4
 			{
 				case "Low Pass":
 					calcType = 0;
-					circuitDisplay.Image = global::ece_calculator_bg4.Properties.Resources.lowpass_placeholder;
+					circuitDisplay.Image = global::ece_calculator_bg4.Properties.Resources.lowpass_final;
 					break;
 				case "High Pass":
 					calcType = 1;
-					circuitDisplay.Image = global::ece_calculator_bg4.Properties.Resources.highpass_placeholder;
+					circuitDisplay.Image = global::ece_calculator_bg4.Properties.Resources.highpass_final;
 					break;
 				case "Band Pass":
-					circuitDisplay.Image = global::ece_calculator_bg4.Properties.Resources.bandpass_placeholder;
+					circuitDisplay.Image = global::ece_calculator_bg4.Properties.Resources.bandpass_final;
 					calcType = 2;
 					break;
 				case "Band Stop":
 					calcType = 3;
-					circuitDisplay.Image = global::ece_calculator_bg4.Properties.Resources.bandstop_placeholder;
+					circuitDisplay.Image = global::ece_calculator_bg4.Properties.Resources.bandstop_final;
 					break;
 			}
 
