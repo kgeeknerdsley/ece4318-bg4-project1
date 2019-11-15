@@ -116,5 +116,5 @@ namespace ece_calculator_bg4
 			}
 			return result; //otherwise return false
 		}
-    }
+	}
 }

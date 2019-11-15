@@ -160,7 +160,15 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-
+			this.ClientSize = new System.Drawing.Size(228, 405);
+			this.Controls.Add(this.label1);
+			this.Controls.Add(this.underline);
+			this.Controls.Add(this.calcLabel);
+			this.Controls.Add(this.refLabel);
+			this.Controls.Add(this.truthTableStart);
+			this.Controls.Add(this.voltageDivStart);
+			this.Controls.Add(this.commonChipStart);
+			this.Controls.Add(this.resistorCalcStart);
 			this.Controls.Add(this.filterCalcStart);
 			this.Controls.Add(this.menuStrip1);
 			this.MainMenuStrip = this.menuStrip1;
@@ -176,5 +184,17 @@
 		#endregion
 
 		private System.Windows.Forms.Button filterCalcStart;
+		private System.Windows.Forms.Button resistorCalcStart;
+		private System.Windows.Forms.Button commonChipStart;
+		private System.Windows.Forms.Button voltageDivStart;
+		private System.Windows.Forms.Button truthTableStart;
+		private System.Windows.Forms.Label refLabel;
+		private System.Windows.Forms.Label calcLabel;
+		private System.Windows.Forms.Label underline;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.MenuStrip menuStrip1;
+		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem aboutMenuItem;
+	}
 }
 
