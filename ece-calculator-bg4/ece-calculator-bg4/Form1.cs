@@ -28,11 +28,5 @@ namespace ece_calculator_bg4
 			FilterCalculator filterCalc = new FilterCalculator(); //all forms are classes, make a new instance
 			filterCalc.Show();//show the new form
 		}
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            VoltageDivider volt = new VoltageDivider();
-            volt.Show();
-        }
     }
 }
