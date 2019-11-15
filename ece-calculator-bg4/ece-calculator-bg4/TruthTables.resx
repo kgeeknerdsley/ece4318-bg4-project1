@@ -117,56 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="bandstop-placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\bandstop-placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="highpass-placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\highpass-placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lowpass-temp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\lowpass-temp.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="bandpass-placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\bandpass-placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="lowpass-placeholder" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\lowpass-placeholder.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="AND" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\AND.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DECODER" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\DECODER.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="DEMUX" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\DEMUX.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ENCODER" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\ENCODER.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="MUX" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\MUX.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NAND" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\NAND.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NOR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\NOR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="NOT" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\NOT.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="OR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\OR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="TSL" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\TSL.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="XNOR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\XNOR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="XOR" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\resources\XOR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
+  <metadata name="toolStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

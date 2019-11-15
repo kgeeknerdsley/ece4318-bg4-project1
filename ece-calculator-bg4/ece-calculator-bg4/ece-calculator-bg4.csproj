@@ -72,6 +72,7 @@
     <Compile Include="ResistorColor.Designer.cs">
       <DependentUpon>ResistorColor.cs</DependentUpon>
     </Compile>
+    <Compile Include="resources\resources.cs" />
     <Compile Include="TruthTables.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +101,12 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="ResistorColor.resx">
+      <DependentUpon>ResistorColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruthTables.resx">
+      <DependentUpon>TruthTables.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -129,16 +136,18 @@
     <None Include="resources\lowpass-placeholder.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="resources\bandpass-final.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\bandstop-final.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\highpass-final.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="resources\lowpass-final.png" />
+    <Content Include="resources\AND.png" />
+    <Content Include="resources\DECODER.bmp" />
+    <Content Include="resources\DEMUX.png" />
+    <Content Include="resources\ENCODER.bmp" />
+    <Content Include="resources\MUX.png" />
+    <Content Include="resources\NAND.png" />
+    <Content Include="resources\NOR.png" />
+    <Content Include="resources\NOT.png" />
+    <Content Include="resources\OR.png" />
+    <Content Include="resources\TSL.png" />
+    <Content Include="resources\XNOR.png" />
+    <Content Include="resources\XOR.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
