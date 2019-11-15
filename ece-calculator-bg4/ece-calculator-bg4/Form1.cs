@@ -100,7 +100,8 @@ namespace ece_calculator_bg4
 				"Voltage Divider: Rafed El-Issa, Cameron Wu\n" +
 				"Resistor Color Code: Josiah DeLeon, Keane Ong\n" +
 				"Common Chip Pinouts: Grant Genie, Eun Koo\n" +
-				"Truth Tables: Steven Baker, Daniel Heer");
+				"Truth Tables: Steven Baker, Daniel Heer\n" +
+				"Main Form and Github Integration: Kevin Worsley");
 		}
 
 		private bool isFormOpen(string formName)

@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FilterCalculator));
 			this.selectFilterType = new System.Windows.Forms.ComboBox();
 			this.dropdownInstruction = new System.Windows.Forms.Label();
 			this.R1Box = new System.Windows.Forms.TextBox();
@@ -262,6 +263,7 @@
 			this.Controls.Add(this.circuitDisplay);
 			this.Controls.Add(this.dropdownInstruction);
 			this.Controls.Add(this.selectFilterType);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "FilterCalculator";
 			this.Text = "RC Filter Calculator";
 			((System.ComponentModel.ISupportInitialize)(this.circuitDisplay)).EndInit();

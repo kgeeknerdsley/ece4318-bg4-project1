@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TruthTables));
 			this.toolStrip1 = new System.Windows.Forms.ToolStrip();
 			this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
 			this.nOTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -179,6 +180,7 @@
 			this.ClientSize = new System.Drawing.Size(1035, 631);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.toolStrip1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Margin = new System.Windows.Forms.Padding(2);
 			this.Name = "TruthTables";
 			this.Text = "Truth Table Charts";

@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VoltageDivider));
 			this.voltDivider_menu = new System.Windows.Forms.TabControl();
 			this.voltD_page1 = new System.Windows.Forms.TabPage();
 			this.label_voutWarning = new System.Windows.Forms.Label();
@@ -82,7 +83,7 @@
 			this.voltDivider_menu.Controls.Add(this.voltD_page1);
 			this.voltDivider_menu.Controls.Add(this.voltD_page2);
 			this.voltDivider_menu.Location = new System.Drawing.Point(341, 14);
-			this.voltDivider_menu.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.voltDivider_menu.Margin = new System.Windows.Forms.Padding(1);
 			this.voltDivider_menu.Name = "voltDivider_menu";
 			this.voltDivider_menu.SelectedIndex = 0;
 			this.voltDivider_menu.Size = new System.Drawing.Size(435, 364);
@@ -96,9 +97,9 @@
 			this.voltD_page1.Controls.Add(this.button_calcVout);
 			this.voltD_page1.Controls.Add(this.groupBox1);
 			this.voltD_page1.Location = new System.Drawing.Point(4, 22);
-			this.voltD_page1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.voltD_page1.Margin = new System.Windows.Forms.Padding(1);
 			this.voltD_page1.Name = "voltD_page1";
-			this.voltD_page1.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.voltD_page1.Padding = new System.Windows.Forms.Padding(1);
 			this.voltD_page1.Size = new System.Drawing.Size(427, 338);
 			this.voltD_page1.TabIndex = 0;
 			this.voltD_page1.Text = "Generate Vout";
@@ -122,9 +123,9 @@
 			this.groupBox_outputs.Controls.Add(this.textBox_vout);
 			this.groupBox_outputs.Controls.Add(this.label_vout);
 			this.groupBox_outputs.Location = new System.Drawing.Point(232, 44);
-			this.groupBox_outputs.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.groupBox_outputs.Margin = new System.Windows.Forms.Padding(1);
 			this.groupBox_outputs.Name = "groupBox_outputs";
-			this.groupBox_outputs.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.groupBox_outputs.Padding = new System.Windows.Forms.Padding(1);
 			this.groupBox_outputs.Size = new System.Drawing.Size(167, 118);
 			this.groupBox_outputs.TabIndex = 38;
 			this.groupBox_outputs.TabStop = false;
@@ -133,7 +134,7 @@
 			// richTextBox_pwr
 			// 
 			this.richTextBox_pwr.Location = new System.Drawing.Point(11, 88);
-			this.richTextBox_pwr.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.richTextBox_pwr.Margin = new System.Windows.Forms.Padding(1);
 			this.richTextBox_pwr.Name = "richTextBox_pwr";
 			this.richTextBox_pwr.Size = new System.Drawing.Size(146, 18);
 			this.richTextBox_pwr.TabIndex = 29;
@@ -152,7 +153,7 @@
 			// textBox_vout
 			// 
 			this.textBox_vout.Location = new System.Drawing.Point(11, 45);
-			this.textBox_vout.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.textBox_vout.Margin = new System.Windows.Forms.Padding(1);
 			this.textBox_vout.Name = "textBox_vout";
 			this.textBox_vout.Size = new System.Drawing.Size(146, 18);
 			this.textBox_vout.TabIndex = 27;
@@ -172,7 +173,7 @@
 			// button_clear
 			// 
 			this.button_clear.Location = new System.Drawing.Point(116, 243);
-			this.button_clear.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.button_clear.Margin = new System.Windows.Forms.Padding(1);
 			this.button_clear.Name = "button_clear";
 			this.button_clear.Size = new System.Drawing.Size(79, 46);
 			this.button_clear.TabIndex = 37;
@@ -183,7 +184,7 @@
 			// button_calcVout
 			// 
 			this.button_calcVout.Location = new System.Drawing.Point(27, 243);
-			this.button_calcVout.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.button_calcVout.Margin = new System.Windows.Forms.Padding(1);
 			this.button_calcVout.Name = "button_calcVout";
 			this.button_calcVout.Size = new System.Drawing.Size(86, 46);
 			this.button_calcVout.TabIndex = 36;
@@ -203,9 +204,9 @@
 			this.groupBox1.Controls.Add(this.R2_textbox);
 			this.groupBox1.Controls.Add(this.R2_label);
 			this.groupBox1.Location = new System.Drawing.Point(27, 44);
-			this.groupBox1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.groupBox1.Margin = new System.Windows.Forms.Padding(1);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.groupBox1.Padding = new System.Windows.Forms.Padding(1);
 			this.groupBox1.Size = new System.Drawing.Size(167, 169);
 			this.groupBox1.TabIndex = 30;
 			this.groupBox1.TabStop = false;
@@ -214,7 +215,7 @@
 			// textBox_rload
 			// 
 			this.textBox_rload.Location = new System.Drawing.Point(56, 132);
-			this.textBox_rload.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.textBox_rload.Margin = new System.Windows.Forms.Padding(1);
 			this.textBox_rload.Name = "textBox_rload";
 			this.textBox_rload.Size = new System.Drawing.Size(63, 20);
 			this.textBox_rload.TabIndex = 38;
@@ -233,7 +234,7 @@
 			// 
 			this.checkBox_load.AutoSize = true;
 			this.checkBox_load.Location = new System.Drawing.Point(32, 109);
-			this.checkBox_load.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.checkBox_load.Margin = new System.Windows.Forms.Padding(1);
 			this.checkBox_load.Name = "checkBox_load";
 			this.checkBox_load.Size = new System.Drawing.Size(114, 17);
 			this.checkBox_load.TabIndex = 37;
@@ -244,7 +245,7 @@
 			// textbox_vin
 			// 
 			this.textbox_vin.Location = new System.Drawing.Point(56, 31);
-			this.textbox_vin.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.textbox_vin.Margin = new System.Windows.Forms.Padding(1);
 			this.textbox_vin.Name = "textbox_vin";
 			this.textbox_vin.Size = new System.Drawing.Size(63, 20);
 			this.textbox_vin.TabIndex = 34;
@@ -263,7 +264,7 @@
 			// R1_textbox
 			// 
 			this.R1_textbox.Location = new System.Drawing.Point(56, 55);
-			this.R1_textbox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.R1_textbox.Margin = new System.Windows.Forms.Padding(1);
 			this.R1_textbox.Name = "R1_textbox";
 			this.R1_textbox.Size = new System.Drawing.Size(63, 20);
 			this.R1_textbox.TabIndex = 30;
@@ -282,7 +283,7 @@
 			// R2_textbox
 			// 
 			this.R2_textbox.Location = new System.Drawing.Point(56, 80);
-			this.R2_textbox.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.R2_textbox.Margin = new System.Windows.Forms.Padding(1);
 			this.R2_textbox.Name = "R2_textbox";
 			this.R2_textbox.Size = new System.Drawing.Size(63, 20);
 			this.R2_textbox.TabIndex = 32;
@@ -305,9 +306,9 @@
 			this.voltD_page2.Controls.Add(this.Generate);
 			this.voltD_page2.Controls.Add(this.groupBox3);
 			this.voltD_page2.Location = new System.Drawing.Point(4, 22);
-			this.voltD_page2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.voltD_page2.Margin = new System.Windows.Forms.Padding(1);
 			this.voltD_page2.Name = "voltD_page2";
-			this.voltD_page2.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.voltD_page2.Padding = new System.Windows.Forms.Padding(1);
 			this.voltD_page2.Size = new System.Drawing.Size(427, 338);
 			this.voltD_page2.TabIndex = 1;
 			this.voltD_page2.Text = "Generate R Values";
@@ -321,9 +322,9 @@
 			this.groupBox2.Controls.Add(this.R1Val);
 			this.groupBox2.Controls.Add(this.label3);
 			this.groupBox2.Location = new System.Drawing.Point(224, 26);
-			this.groupBox2.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.groupBox2.Margin = new System.Windows.Forms.Padding(1);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.groupBox2.Padding = new System.Windows.Forms.Padding(1);
 			this.groupBox2.Size = new System.Drawing.Size(186, 186);
 			this.groupBox2.TabIndex = 43;
 			this.groupBox2.TabStop = false;
@@ -332,7 +333,7 @@
 			// R2Val
 			// 
 			this.R2Val.Location = new System.Drawing.Point(11, 88);
-			this.R2Val.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.R2Val.Margin = new System.Windows.Forms.Padding(1);
 			this.R2Val.Name = "R2Val";
 			this.R2Val.Size = new System.Drawing.Size(146, 18);
 			this.R2Val.TabIndex = 29;
@@ -351,7 +352,7 @@
 			// R1Val
 			// 
 			this.R1Val.Location = new System.Drawing.Point(11, 45);
-			this.R1Val.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.R1Val.Margin = new System.Windows.Forms.Padding(1);
 			this.R1Val.Name = "R1Val";
 			this.R1Val.Size = new System.Drawing.Size(146, 18);
 			this.R1Val.TabIndex = 27;
@@ -371,7 +372,7 @@
 			// clear_butt
 			// 
 			this.clear_butt.Location = new System.Drawing.Point(224, 266);
-			this.clear_butt.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.clear_butt.Margin = new System.Windows.Forms.Padding(1);
 			this.clear_butt.Name = "clear_butt";
 			this.clear_butt.Size = new System.Drawing.Size(186, 46);
 			this.clear_butt.TabIndex = 42;
@@ -382,7 +383,7 @@
 			// Generate
 			// 
 			this.Generate.Location = new System.Drawing.Point(19, 266);
-			this.Generate.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.Generate.Margin = new System.Windows.Forms.Padding(1);
 			this.Generate.Name = "Generate";
 			this.Generate.Size = new System.Drawing.Size(203, 46);
 			this.Generate.TabIndex = 41;
@@ -402,9 +403,9 @@
 			this.groupBox3.Controls.Add(this.R1);
 			this.groupBox3.Controls.Add(this.label_r1manualEntry);
 			this.groupBox3.Location = new System.Drawing.Point(19, 26);
-			this.groupBox3.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.groupBox3.Margin = new System.Windows.Forms.Padding(1);
 			this.groupBox3.Name = "groupBox3";
-			this.groupBox3.Padding = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.groupBox3.Padding = new System.Windows.Forms.Padding(1);
 			this.groupBox3.Size = new System.Drawing.Size(203, 225);
 			this.groupBox3.TabIndex = 40;
 			this.groupBox3.TabStop = false;
@@ -424,7 +425,7 @@
 			// MaxPower
 			// 
 			this.MaxPower.Location = new System.Drawing.Point(66, 88);
-			this.MaxPower.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.MaxPower.Margin = new System.Windows.Forms.Padding(1);
 			this.MaxPower.Name = "MaxPower";
 			this.MaxPower.Size = new System.Drawing.Size(63, 20);
 			this.MaxPower.TabIndex = 40;
@@ -444,7 +445,7 @@
 			// Vin
 			// 
 			this.Vin.Location = new System.Drawing.Point(66, 31);
-			this.Vin.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.Vin.Margin = new System.Windows.Forms.Padding(1);
 			this.Vin.Name = "Vin";
 			this.Vin.Size = new System.Drawing.Size(63, 20);
 			this.Vin.TabIndex = 34;
@@ -462,7 +463,7 @@
 			// Vout
 			// 
 			this.Vout.Location = new System.Drawing.Point(66, 55);
-			this.Vout.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.Vout.Margin = new System.Windows.Forms.Padding(1);
 			this.Vout.Name = "Vout";
 			this.Vout.Size = new System.Drawing.Size(63, 20);
 			this.Vout.TabIndex = 30;
@@ -480,7 +481,7 @@
 			// R1
 			// 
 			this.R1.Location = new System.Drawing.Point(66, 166);
-			this.R1.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.R1.Margin = new System.Windows.Forms.Padding(1);
 			this.R1.Name = "R1";
 			this.R1.Size = new System.Drawing.Size(63, 20);
 			this.R1.TabIndex = 32;
@@ -514,7 +515,8 @@
 			this.ClientSize = new System.Drawing.Size(781, 519);
 			this.Controls.Add(this.voltDivider_menu);
 			this.Controls.Add(this.voltDivider_picBox);
-			this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+			this.Margin = new System.Windows.Forms.Padding(1);
 			this.Name = "VoltageDivider";
 			this.Text = "Voltage Divider Calc";
 			this.Load += new System.EventHandler(this.VoltageDivider_Load);
