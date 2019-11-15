@@ -30,25 +30,23 @@
 		{
 			this.selectFilterType = new System.Windows.Forms.ComboBox();
 			this.dropdownInstruction = new System.Windows.Forms.Label();
-			this.circuitDisplay = new System.Windows.Forms.PictureBox();
 			this.R1Box = new System.Windows.Forms.TextBox();
 			this.R2Box = new System.Windows.Forms.TextBox();
 			this.C1Box = new System.Windows.Forms.TextBox();
 			this.C2Box = new System.Windows.Forms.TextBox();
 			this.fcBox = new System.Windows.Forms.TextBox();
-			this.tauBox = new System.Windows.Forms.TextBox();
 			this.startFilterCalc = new System.Windows.Forms.Button();
 			this.r1Label = new System.Windows.Forms.Label();
 			this.r2Label = new System.Windows.Forms.Label();
 			this.c1Label = new System.Windows.Forms.Label();
 			this.c2Label = new System.Windows.Forms.Label();
 			this.fcLabel = new System.Windows.Forms.Label();
-			this.tauLabel = new System.Windows.Forms.Label();
 			this.r1Units = new System.Windows.Forms.ComboBox();
 			this.r2Units = new System.Windows.Forms.ComboBox();
 			this.fcUnitLabel = new System.Windows.Forms.Label();
 			this.c1Units = new System.Windows.Forms.ComboBox();
 			this.c2Units = new System.Windows.Forms.ComboBox();
+			this.circuitDisplay = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.circuitDisplay)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -64,6 +62,7 @@
 			this.selectFilterType.Name = "selectFilterType";
 			this.selectFilterType.Size = new System.Drawing.Size(121, 21);
 			this.selectFilterType.TabIndex = 0;
+			this.selectFilterType.Text = "Low Pass";
 			this.selectFilterType.SelectedIndexChanged += new System.EventHandler(this.selectFilterType_SelectedIndexChanged);
 			// 
 			// dropdownInstruction
@@ -74,18 +73,6 @@
 			this.dropdownInstruction.Size = new System.Drawing.Size(58, 13);
 			this.dropdownInstruction.TabIndex = 1;
 			this.dropdownInstruction.Text = "Filter type: ";
-			// 
-			// circuitDisplay
-			// 
-			this.circuitDisplay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.circuitDisplay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.circuitDisplay.Image = global::ece_calculator_bg4.Properties.Resources.lowpass_placeholder;
-			this.circuitDisplay.InitialImage = global::ece_calculator_bg4.Properties.Resources.lowpass_placeholder;
-			this.circuitDisplay.Location = new System.Drawing.Point(12, 59);
-			this.circuitDisplay.Name = "circuitDisplay";
-			this.circuitDisplay.Size = new System.Drawing.Size(550, 350);
-			this.circuitDisplay.TabIndex = 2;
-			this.circuitDisplay.TabStop = false;
 			// 
 			// R1Box
 			// 
@@ -122,18 +109,11 @@
 			this.fcBox.Size = new System.Drawing.Size(75, 20);
 			this.fcBox.TabIndex = 7;
 			// 
-			// tauBox
-			// 
-			this.tauBox.Location = new System.Drawing.Point(618, 389);
-			this.tauBox.Name = "tauBox";
-			this.tauBox.Size = new System.Drawing.Size(75, 20);
-			this.tauBox.TabIndex = 8;
-			// 
 			// startFilterCalc
 			// 
-			this.startFilterCalc.Location = new System.Drawing.Point(618, 434);
+			this.startFilterCalc.Location = new System.Drawing.Point(576, 374);
 			this.startFilterCalc.Name = "startFilterCalc";
-			this.startFilterCalc.Size = new System.Drawing.Size(75, 23);
+			this.startFilterCalc.Size = new System.Drawing.Size(170, 35);
 			this.startFilterCalc.TabIndex = 9;
 			this.startFilterCalc.Text = "Calculate";
 			this.startFilterCalc.UseVisualStyleBackColor = true;
@@ -142,7 +122,7 @@
 			// r1Label
 			// 
 			this.r1Label.AutoSize = true;
-			this.r1Label.Location = new System.Drawing.Point(569, 81);
+			this.r1Label.Location = new System.Drawing.Point(572, 82);
 			this.r1Label.Name = "r1Label";
 			this.r1Label.Size = new System.Drawing.Size(27, 13);
 			this.r1Label.TabIndex = 10;
@@ -160,7 +140,7 @@
 			// c1Label
 			// 
 			this.c1Label.AutoSize = true;
-			this.c1Label.Location = new System.Drawing.Point(572, 216);
+			this.c1Label.Location = new System.Drawing.Point(572, 215);
 			this.c1Label.Name = "c1Label";
 			this.c1Label.Size = new System.Drawing.Size(26, 13);
 			this.c1Label.TabIndex = 12;
@@ -169,7 +149,7 @@
 			// c2Label
 			// 
 			this.c2Label.AutoSize = true;
-			this.c2Label.Location = new System.Drawing.Point(575, 282);
+			this.c2Label.Location = new System.Drawing.Point(573, 278);
 			this.c2Label.Name = "c2Label";
 			this.c2Label.Size = new System.Drawing.Size(26, 13);
 			this.c2Label.TabIndex = 13;
@@ -178,20 +158,11 @@
 			// fcLabel
 			// 
 			this.fcLabel.AutoSize = true;
-			this.fcLabel.Location = new System.Drawing.Point(578, 332);
+			this.fcLabel.Location = new System.Drawing.Point(577, 332);
 			this.fcLabel.Name = "fcLabel";
 			this.fcLabel.Size = new System.Drawing.Size(22, 13);
 			this.fcLabel.TabIndex = 14;
 			this.fcLabel.Text = "fc: ";
-			// 
-			// tauLabel
-			// 
-			this.tauLabel.AutoSize = true;
-			this.tauLabel.Location = new System.Drawing.Point(578, 389);
-			this.tauLabel.Name = "tauLabel";
-			this.tauLabel.Size = new System.Drawing.Size(19, 13);
-			this.tauLabel.TabIndex = 15;
-			this.tauLabel.Text = " τ:";
 			// 
 			// r1Units
 			// 
@@ -200,10 +171,11 @@
             "Ω",
             "kΩ",
             "MΩ"});
-			this.r1Units.Location = new System.Drawing.Point(737, 74);
+			this.r1Units.Location = new System.Drawing.Point(699, 74);
 			this.r1Units.Name = "r1Units";
 			this.r1Units.Size = new System.Drawing.Size(39, 21);
 			this.r1Units.TabIndex = 16;
+			this.r1Units.Text = "Ω";
 			// 
 			// r2Units
 			// 
@@ -212,15 +184,16 @@
             "Ω",
             "kΩ",
             "MΩ"});
-			this.r2Units.Location = new System.Drawing.Point(737, 140);
+			this.r2Units.Location = new System.Drawing.Point(699, 140);
 			this.r2Units.Name = "r2Units";
 			this.r2Units.Size = new System.Drawing.Size(39, 21);
 			this.r2Units.TabIndex = 17;
+			this.r2Units.Text = "Ω";
 			// 
 			// fcUnitLabel
 			// 
 			this.fcUnitLabel.AutoSize = true;
-			this.fcUnitLabel.Location = new System.Drawing.Point(737, 338);
+			this.fcUnitLabel.Location = new System.Drawing.Point(699, 338);
 			this.fcUnitLabel.Name = "fcUnitLabel";
 			this.fcUnitLabel.Size = new System.Drawing.Size(57, 13);
 			this.fcUnitLabel.TabIndex = 18;
@@ -234,10 +207,11 @@
             "μF",
             "nF",
             "pF"});
-			this.c1Units.Location = new System.Drawing.Point(737, 207);
+			this.c1Units.Location = new System.Drawing.Point(699, 207);
 			this.c1Units.Name = "c1Units";
 			this.c1Units.Size = new System.Drawing.Size(39, 21);
 			this.c1Units.TabIndex = 19;
+			this.c1Units.Text = "μF";
 			// 
 			// c2Units
 			// 
@@ -247,29 +221,40 @@
             "μF",
             "nF",
             "pF"});
-			this.c2Units.Location = new System.Drawing.Point(737, 274);
+			this.c2Units.Location = new System.Drawing.Point(699, 274);
 			this.c2Units.Name = "c2Units";
 			this.c2Units.Size = new System.Drawing.Size(39, 21);
 			this.c2Units.TabIndex = 20;
+			this.c2Units.Text = "μF";
+			// 
+			// circuitDisplay
+			// 
+			this.circuitDisplay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+			this.circuitDisplay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.circuitDisplay.Image = global::ece_calculator_bg4.Properties.Resources.lowpass_final;
+			this.circuitDisplay.InitialImage = global::ece_calculator_bg4.Properties.Resources.lowpass_placeholder;
+			this.circuitDisplay.Location = new System.Drawing.Point(12, 59);
+			this.circuitDisplay.Name = "circuitDisplay";
+			this.circuitDisplay.Size = new System.Drawing.Size(550, 350);
+			this.circuitDisplay.TabIndex = 2;
+			this.circuitDisplay.TabStop = false;
 			// 
 			// FilterCalculator
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(847, 484);
+			this.ClientSize = new System.Drawing.Size(779, 430);
 			this.Controls.Add(this.c2Units);
 			this.Controls.Add(this.c1Units);
 			this.Controls.Add(this.fcUnitLabel);
 			this.Controls.Add(this.r2Units);
 			this.Controls.Add(this.r1Units);
-			this.Controls.Add(this.tauLabel);
 			this.Controls.Add(this.fcLabel);
 			this.Controls.Add(this.c2Label);
 			this.Controls.Add(this.c1Label);
 			this.Controls.Add(this.r2Label);
 			this.Controls.Add(this.r1Label);
 			this.Controls.Add(this.startFilterCalc);
-			this.Controls.Add(this.tauBox);
 			this.Controls.Add(this.fcBox);
 			this.Controls.Add(this.C2Box);
 			this.Controls.Add(this.C1Box);
@@ -296,14 +281,12 @@
 		private System.Windows.Forms.TextBox C1Box;
 		private System.Windows.Forms.TextBox C2Box;
 		private System.Windows.Forms.TextBox fcBox;
-		private System.Windows.Forms.TextBox tauBox;
 		private System.Windows.Forms.Button startFilterCalc;
 		private System.Windows.Forms.Label r1Label;
 		private System.Windows.Forms.Label r2Label;
 		private System.Windows.Forms.Label c1Label;
 		private System.Windows.Forms.Label c2Label;
 		private System.Windows.Forms.Label fcLabel;
-		private System.Windows.Forms.Label tauLabel;
 		private System.Windows.Forms.ComboBox r1Units;
 		private System.Windows.Forms.ComboBox r2Units;
 		private System.Windows.Forms.Label fcUnitLabel;
