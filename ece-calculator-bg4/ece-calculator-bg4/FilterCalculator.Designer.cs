@@ -231,8 +231,7 @@
 			// 
 			this.circuitDisplay.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
 			this.circuitDisplay.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-			this.circuitDisplay.Image = global::ece_calculator_bg4.Properties.Resources.lowpass_final;
-			this.circuitDisplay.InitialImage = global::ece_calculator_bg4.Properties.Resources.lowpass_placeholder;
+			this.circuitDisplay.InitialImage = global::ece_calculator_bg4.Properties.Resources.lowpass_final;
 			this.circuitDisplay.Location = new System.Drawing.Point(12, 59);
 			this.circuitDisplay.Name = "circuitDisplay";
 			this.circuitDisplay.Size = new System.Drawing.Size(550, 350);

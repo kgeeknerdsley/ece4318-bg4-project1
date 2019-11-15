@@ -63,10 +63,19 @@ namespace ece_calculator_bg4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
         internal static System.Drawing.Bitmap AND {
             get {
                 object obj = ResourceManager.GetObject("AND", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bandpass_final {
+            get {
+                object obj = ResourceManager.GetObject("bandpass-final", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -86,7 +95,7 @@ namespace ece_calculator_bg4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap bandstop_final {
             get {
-                object obj = ResourceManager.GetObject("bandstop_final", resourceCulture);
+                object obj = ResourceManager.GetObject("bandstop-final", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -104,7 +113,6 @@ namespace ece_calculator_bg4.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-
         internal static System.Drawing.Bitmap DECODER {
             get {
                 object obj = ResourceManager.GetObject("DECODER", resourceCulture);
@@ -128,7 +136,16 @@ namespace ece_calculator_bg4.Properties {
         internal static System.Drawing.Bitmap ENCODER {
             get {
                 object obj = ResourceManager.GetObject("ENCODER", resourceCulture);
-
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap highpass_final {
+            get {
+                object obj = ResourceManager.GetObject("highpass-final", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -148,7 +165,7 @@ namespace ece_calculator_bg4.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap lowpass_final {
             get {
-                object obj = ResourceManager.GetObject("lowpass_final", resourceCulture);
+                object obj = ResourceManager.GetObject("lowpass-final", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

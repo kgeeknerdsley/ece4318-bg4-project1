@@ -137,9 +137,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="resources\AND.png" />
+    <None Include="resources\bandpass-final.png" />
+    <None Include="resources\bandstop-final.png" />
     <Content Include="resources\DECODER.bmp" />
     <Content Include="resources\DEMUX.png" />
     <Content Include="resources\ENCODER.bmp" />
+    <None Include="resources\highpass-final.png" />
+    <None Include="resources\lowpass-final.png" />
     <Content Include="resources\MUX.png" />
     <Content Include="resources\NAND.png" />
     <Content Include="resources\NOR.png" />
