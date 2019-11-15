@@ -160,6 +160,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+
 			this.ClientSize = new System.Drawing.Size(228, 405);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.underline);
@@ -184,6 +185,7 @@
 		#endregion
 
 		private System.Windows.Forms.Button filterCalcStart;
+
 		private System.Windows.Forms.Button resistorCalcStart;
 		private System.Windows.Forms.Button commonChipStart;
 		private System.Windows.Forms.Button voltageDivStart;
@@ -196,5 +198,6 @@
 		private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem aboutMenuItem;
 	}
+
 }
 
