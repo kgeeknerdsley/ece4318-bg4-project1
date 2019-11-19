@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>cpplogo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -181,7 +184,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-
   <ItemGroup>
     <None Include="resources\lowpass-temp.PNG" />
   </ItemGroup>
@@ -198,6 +200,7 @@
     <None Include="resources\lowpass-placeholder.png" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="cpplogo.ico" />
     <Content Include="resources\AND.png" />
     <None Include="resources\bandpass-final.png" />
     <None Include="resources\bandstop-final.png" />
@@ -216,6 +219,5 @@
     <Content Include="resources\XNOR.png" />
     <Content Include="resources\XOR.png" />
   </ItemGroup>
-
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
