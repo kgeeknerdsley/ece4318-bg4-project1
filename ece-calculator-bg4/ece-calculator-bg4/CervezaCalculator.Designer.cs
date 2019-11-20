@@ -202,7 +202,7 @@
             // pictureBox_currentGif
             // 
             this.pictureBox_currentGif.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox_currentGif.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_currentGif.Image")));
+            this.pictureBox_currentGif.Image = global::ece_calculator_bg4.Properties.Resources._1;
             this.pictureBox_currentGif.Location = new System.Drawing.Point(1707, 253);
             this.pictureBox_currentGif.Name = "pictureBox_currentGif";
             this.pictureBox_currentGif.Size = new System.Drawing.Size(480, 367);
